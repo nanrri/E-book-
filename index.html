@@ -2,70 +2,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O Segredo</title>
+  <title>O Segredo - E-book Revelador</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://img.freepik.com/fotos-gratis/calculadora-e-graficos-de-vendas-na-mesa-do-escritorio_1150-17522.jpg') no-repeat center center/cover;
-      color: white;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 0;
-    }
-    .content {
-      position: relative;
-      z-index: 1;
-      max-width: 600px;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    h2 {
-      font-size: 1.6em;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.1em;
-      margin-bottom: 30px;
-      color: #ccc;
-    }
-    .cta-button {
-      padding: 15px 30px;
-      background: linear-gradient(to right, #00ff99, #00ccff);
-      border: none;
-      border-radius: 30px;
-      color: black;
-      font-weight: bold;
-      font-size: 1em;
-      cursor: pointer;
-      text-decoration: none;
-    }
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }body {
+  background: radial-gradient(circle at center, #0f0f0f, #010101);
+  color: white;
+  overflow-x: hidden;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(to right, #00ff99, #00ccff);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #25D366;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebc59;
+}
+
+.ebook-animation {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.ebook-animation video {
+  max-width: 90%;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #00ffcc;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}
+
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-  <div class="content">
-    <h1>O Segredo</h1>
-    <h2>Descubra os métodos que fazem pessoas comuns lucrarem alto com marketing digital</h2>
-    <p>Você terá acesso ao conteúdo exclusivo com estratégias que estão por trás dos bastidores das mentes que mais faturam no digital — tudo revelado de forma simples e direta!</p>
-    <a class="cta-button" href="https://wa.me/55SEUNUMERO?text=Tenho%20interesse%20no%20e-book%20O%20Segredo" target="_blank">QUERO MEU ACESSO</a>
-  </div>
-</body>
-</html>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Descubra o Segredo Que Ninguém Conta</h1>
+      <p>Você está a um clique de conhecer o método que transformou a realidade de quem faturava zero para ganhos reais e constantes com estratégias orgânicas e invisíveis.</p>
+      <a class="btn-whatsapp" href="https://wa.me/SEUNUMERO?text=Tenho%20interesse%20no%20e-book%20O%20Segredo">Quero acessar agora</a>
+    </div>
+  </section>  <section class="ebook-animation">
+    <h2>Veja o que você vai aprender</h2>
