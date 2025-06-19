@@ -2,19 +2,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O Segredo - E-book Revelador</title>
+  <title>O Segredo - Ebook Revelador</title>
   <style>
     body {
       margin: 0;
+      background: radial-gradient(circle, #000000 0%, #0a0a0a 100%);
       font-family: 'Arial', sans-serif;
-      background: radial-gradient(ellipse at bottom, #0f0f0f 0%, #000000 100%);
       color: #fff;
-      overflow-x: hidden;
     }
     .hero {
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(to top, #0f0f0f, #00ffaa22);
+      padding: 50px 20px;
+      background: linear-gradient(to top, #000, #00ffaa22);
     }
     .hero h1 {
       font-size: 3rem;
@@ -23,78 +22,65 @@
     .hero p {
       font-size: 1.3rem;
       color: #e0e0e0;
-      max-width: 700px;
+      max-width: 600px;
       margin: 20px auto;
     }
     .cta-button {
       background: #00ffaa;
       color: #000;
-      padding: 18px 35px;
-      font-size: 1.1rem;
+      padding: 15px 30px;
+      font-size: 1rem;
       font-weight: bold;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
       cursor: pointer;
-      margin: 10px;
-      box-shadow: 0 0 15px #00ffaa;
       transition: transform 0.2s;
     }
     .cta-button:hover {
       transform: scale(1.05);
     }
-    .discount {
-      color: #00ffaa;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    .iphone-container {
-      text-align: center;
-      margin: 40px 0;
-    }
-    .iphone {
-      width: 250px;
-      animation: spin 8s linear infinite;
-    }
-    @keyframes spin {
-      0% { transform: rotateY(0deg); }
-      100% { transform: rotateY(360deg); }
-    }
-    .notifications {
-      position: absolute;
-      top: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: drop 3s infinite;
+    .discount-bar {
       background: #00ffaa;
-      padding: 10px 20px;
       color: #000;
-      border-radius: 30px;
-      box-shadow: 0 0 10px #00ffaa;
-    }
-    @keyframes drop {
-      0% { top: 50px; opacity: 1; }
-      100% { top: 600px; opacity: 0; }
+      padding: 10px;
+      font-weight: bold;
+      margin-top: 10px;
+      border-radius: 5px;
     }
     .faq {
-      background: #111;
-      padding: 40px 20px;
-      border-top: 2px solid #00ffaa;
+      padding: 50px 20px;
+      text-align: center;
     }
     .faq h2 {
       color: #00ffaa;
-      margin-bottom: 20px;
-      text-align: center;
+      margin-bottom: 30px;
     }
     .faq-item {
-      background: #222;
-      margin-bottom: 10px;
-      padding: 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      border: 1px solid #00ffaa;
+      background: #111;
+      border: 2px solid #00ffaa;
+      border-radius: 12px;
+      margin: 10px auto;
+      max-width: 700px;
+      padding: 20px;
+      text-align: left;
     }
-    .faq-item:hover {
-      background: #333;
+    .faq-item h3 {
+      margin-bottom: 10px;
+      color: #00ffaa;
+    }
+    .video-container {
+      width: 320px;
+      height: 650px;
+      margin: 40px auto;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 0 20px #00ffaa;
+      border: 4px solid #00ffaa;
+    }
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .whatsapp {
       position: fixed;
@@ -115,21 +101,33 @@
 </head>
 <body>
   <div class="hero">
-    <h1>Descubra "O Segredo" Que Ninguém Te Contou!</h1>
-    <p>Aprenda os métodos ocultos que os grandes usam para faturar alto no digital, sem investir em anúncios e sem aparecer!</p>
+    <h1>O Segredo que Ninguém Te Conta</h1>
+    <p>Descubra como pessoas comuns estão faturando todos os dias na internet sem precisar aparecer, sem investir e de forma 100% orgânica!</p>
     <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">QUERO AGORA</a>
-    <div class="discount">DESCONTO RELÂMPAGO – De R$35,45 por R$9,90</div>
-    <br>
-    <a href="#popup" class="cta-button">NÃO INTERESSADO</a>
-  </div>  <div class="iphone-container">
-    <img src="https://i.imgur.com/Qr6XjZp.png" alt="iPhone" class="iphone">
-    <div class="notifications">Venda Aprovada - R$197</div>
+    <div class="discount-bar">DESCONTO RELÂMPAGO – De R$35,45 por R$9,90</div>
+  </div>  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="video.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
   </div>  <div class="faq">
-    <h2>O que você vai aprender aqui?</h2>
-    <div class="faq-item">Como gerar renda sem aparecer</div>
-    <div class="faq-item">Segredos ocultos do marketing digital</div>
-    <div class="faq-item">Técnicas de vendas no orgânico</div>
-    <div class="faq-item">Como escalar ganhos sem investir</div>
+    <h2>O que você vai aprender</h2>
+    <div class="faq-item">
+      <h3>🚀 Como vender todos os dias no orgânico</h3>
+      <p>Descubra estratégias ocultas que ninguém te conta para ter vendas recorrentes sem gastar um centavo.</p>
+    </div>
+    <div class="faq-item">
+      <h3>💰 Como gerar renda sem aparecer</h3>
+      <p>Você não precisa mostrar rosto, não precisa gravar vídeos. Métodos 100% anônimos e funcionais.</p>
+    </div>
+    <div class="faq-item">
+      <h3>📱 Ferramentas e segredos dos grandes</h3>
+      <p>Domine as ferramentas que os milionários usam e que nunca revelaram pra você.</p>
+    </div>
+    <div class="faq-item">
+      <h3>⚡ E muito mais...</h3>
+      <p>Segredos, hacks e estratégias validadas que vão acelerar seu faturamento.</p>
+    </div>
   </div>  <div class="whatsapp">
     <a href="https://wa.me/5529991229786" target="_blank">📱</a>
   </div>
