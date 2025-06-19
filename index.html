@@ -1,239 +1,135 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Segredo - Ebook Revelador</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: radial-gradient(ellipse at bottom, #0f0f0f 0%, #0a0a0a 100%);
-    color: #fff;
-    overflow-x: hidden;
-  }
-  .hero {
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(to top, #0f0f0f, #00ffaa22);
-  }
-  .hero h1 {
-    font-size: 2.5rem;
-    color: #00ffaa;
-  }
-  .hero p {
-    font-size: 1.2rem;
-    color: #e0e0e0;
-    max-width: 600px;
-    margin: 20px auto;
-  }
-  .cta-button {
-    background: #00ffaa;
-    color: #000;
-    padding: 15px 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  .cta-button:hover {
-    transform: scale(1.05);
-  }
-
-  /* Cards */
-  .cards-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px;
-    scroll-snap-type: x mandatory;
-  }
-  .card {
-    flex: 0 0 280px;
-    scroll-snap-align: center;
-    background: #111;
-    border: 2px solid #00ffaa;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-  }
-  .card h3 {
-    color: #00ffaa;
-  }
-
-  /* WhatsApp */
-  .whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-  }
-  .whatsapp a {
-    background: #25D366;
-    padding: 15px;
-    border-radius: 50%;
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    box-shadow: 0 0 15px #25D366;
-  }
-
-  /* Ebook Showcase */
-  .ebook-showcase {
-    background: #121212;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  .ebook-showcase h2 {
-    color: #00ffaa;
-    margin-bottom: 20px;
-  }
-  .ebook-showcase p {
-    color: #ccc;
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-  }
-
-  /* Animação Iphone */
-  .iphone-container {
-    margin: 60px auto;
-    text-align: center;
-    position: relative;
-  }
-  .iphone {
-    width: 250px;
-    height: 500px;
-    border: 15px solid #000;
-    border-radius: 40px;
-    background: #1a1a1a;
-    margin: 0 auto;
-    position: relative;
-    animation: rotate 6s infinite linear;
-    box-shadow: 0 0 30px #00ffaa;
-  }
-  .iphone::before {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 5px;
-    background: #000;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
-  }
-  .iphone-screen {
-    width: 90%;
-    height: 85%;
-    background: #000;
-    border-radius: 30px;
-    margin: 20px auto;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Notificações */
-  .notification {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #00ffaa;
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 30px;
-    animation: fall 5s infinite;
-    font-weight: bold;
-    font-size: 0.9rem;
-  }
-
-  @keyframes rotate {
-    0% { transform: rotateY(0deg); }
-    50% { transform: rotateY(180deg); }
-    100% { transform: rotateY(360deg); }
-  }
-
-  @keyframes fall {
-    0% { top: -50px; opacity: 0; }
-    10% { opacity: 1; }
-    50% { top: 50%; opacity: 1; }
-    90% { opacity: 1; }
-    100% { top: 120%; opacity: 0; }
-  }
-
-  /* Vendas simuladas */
-  .sales-popup {
-    position: fixed;
-    bottom: 80px;
-    left: 20px;
-    background: #00ffaa;
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px #00ffaa;
-    animation: popup 5s infinite;
-    font-weight: bold;
-    font-size: 0.9rem;
-  }
-
-  @keyframes popup {
-    0% { opacity: 0; bottom: 80px; }
-    10% { opacity: 1; }
-    50% { bottom: 120px; opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; bottom: 80px; }
-  }
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Segredo - Ebook Revelador</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(ellipse at bottom, #0f0f0f 0%, #0a0a0a 100%);
+      color: #fff;
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(to top, #0f0f0f, #00ffaa22);
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #00ffaa;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    .cta-button {
+      background: #00ffaa;
+      color: #000;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
+    .cards-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      scroll-snap-type: x mandatory;
+    }
+    .card {
+      flex: 0 0 280px;
+      scroll-snap-align: center;
+      background: #111;
+      border: 2px solid #00ffaa;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .card h3 {
+      color: #00ffaa;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+    .whatsapp a {
+      background: #25D366;
+      padding: 15px;
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      box-shadow: 0 0 15px #25D366;
+    }
+    .ebook-showcase {
+      background: #121212;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .ebook-showcase h2 {
+      color: #00ffaa;
+      margin-bottom: 20px;
+    }
+    .ebook-showcase p {
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+    .video-section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .video-section video {
+      width: 320px;
+      height: 570px;
+      border: 3px solid #00ffaa;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00ffaa44;
+    }
+  </style>
 </head>
 <body>
-
-<div class="hero">
-  <h1>Descubra o Segredo Para Transformar Sua Vida</h1>
-  <p>Com meu novo e-book exclusivo, você aprenderá os métodos que realmente funcionam — sem precisar investir dinheiro!</p>
-  <a href="https://seu-link-do-ebook-aqui.com" class="cta-button">Quero Meu Acesso</a>
-</div>
-
-<div class="iphone-container">
-  <div class="iphone">
-    <div class="iphone-screen">
-      <div class="notification">💸 Venda Aprovada - R$197</div>
+  <div class="hero">
+    <h1>Descubra o Segredo Para Transformar Sua Vida</h1>
+    <p>Com meu novo e-book exclusivo, você aprenderá os métodos que realmente funcionam — sem precisar investir dinheiro!</p>
+    <a href="https://seu-link-do-ebook-aqui.com" class="cta-button">Quero Meu Acesso</a>
+  </div>  <div class="cards-container">
+    <div class="card">
+      <h3>✅ Passo 1</h3>
+      <p>Entenda o básico do marketing sem precisar aparecer.</p>
     </div>
+    <div class="card">
+      <h3>✅ Passo 2</h3>
+      <p>Aprenda a divulgar de forma orgânica sem gastar nada.</p>
+    </div>
+    <div class="card">
+      <h3>✅ Passo 3</h3>
+      <p>Monetize seu conhecimento e multiplique os ganhos.</p>
+    </div>
+  </div>  <div class="ebook-showcase">
+    <h2>O que você vai aprender no e-book</h2>
+    <p>Você vai descobrir estratégias escondidas de grandes nomes do marketing. Vai dominar gatilhos mentais, aprender a usar redes sociais de forma estratégica e atrair compradores todos os dias, sem precisar se expor ou fazer anúncios pagos.</p>
+  </div>  <div class="video-section">
+    <h2>Veja como funciona na prática:</h2>
+    <video controls>
+      <source src="seuvideo.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+  </div>  <div class="whatsapp">
+    <a href="https://wa.me/5529991229786" target="_blank">📱</a>
   </div>
-</div>
-
-<div class="cards-container">
-  <div class="card">
-    <h3>✅ Passo 1</h3>
-    <p>Entenda o básico do marketing sem precisar aparecer.</p>
-  </div>
-  <div class="card">
-    <h3>✅ Passo 2</h3>
-    <p>Aprenda a divulgar de forma orgânica sem gastar nada.</p>
-  </div>
-  <div class="card">
-    <h3>✅ Passo 3</h3>
-    <p>Monetize seu conhecimento e multiplique os ganhos.</p>
-  </div>
-</div>
-
-<div class="ebook-showcase">
-  <h2>O que você vai aprender no e-book</h2>
-  <p>Você vai descobrir estratégias escondidas de grandes nomes do marketing. Vai dominar gatilhos mentais, aprender a usar redes sociais de forma estratégica e atrair compradores todos os dias, sem precisar se expor ou fazer anúncios pagos.</p>
-</div>
-
-<!-- Popup de venda simulada -->
-<div class="sales-popup">
-  ✅ João acabou de comprar!
-</div>
-
-<!-- WhatsApp -->
-<div class="whatsapp">
-  <a href="https://wa.me/5529991229786" target="_blank">📱</a>
-</div>
-
 </body>
 </html>
