@@ -5,45 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>O Segredo — Fature Pesado no Orgânico</title>
 <style>
-  /* Reset */
   * {
     margin: 0; padding: 0; box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
 
-  body, html {
-    height: 100%;
+  body {
     background: #000;
     color: #fff;
     overflow-x: hidden;
   }
 
-  /* Vídeo de fundo */
-  #bg-video {
-    position: fixed;
-    top: 50%; left: 50%;
-    width: 100vw; height: 100vh;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -10;
-    opacity: 0.22;
-  }
-
-  /* Container principal */
+  /* Container */
   .container {
     max-width: 960px;
     margin: 0 auto;
-    padding: 60px 20px 120px;
+    padding: 60px 20px 80px;
     text-align: center;
-    position: relative;
-    z-index: 10;
   }
 
-  /* Título principal */
+  /* Título */
   h1.title {
     font-size: 3.4rem;
     color: #00ffaa;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     text-shadow: 0 0 10px #00ffaa;
   }
 
@@ -56,7 +41,7 @@
     line-height: 1.6;
   }
 
-  /* Botão CTA */
+  /* Botão */
   a.cta-button {
     display: inline-block;
     background: #00ffaa;
@@ -73,7 +58,7 @@
     box-shadow: 0 0 40px #00ffaa;
   }
 
-  /* Área do celular 3D */
+  /* Celular */
   .phone-wrapper {
     margin: 50px auto 70px;
     perspective: 1200px;
@@ -81,16 +66,12 @@
     height: 480px;
     position: relative;
   }
-
-  /* Celular girando */
   .phone {
     width: 100%;
     height: 100%;
     border-radius: 36px;
     background: linear-gradient(145deg, #0a0a0a, #101010);
-    box-shadow:
-      inset 0 0 20px #005544,
-      0 0 60px #00ffaa;
+    box-shadow: inset 0 0 20px #005544, 0 0 60px #00ffaa;
     transform-style: preserve-3d;
     animation: phone-spin 15s linear infinite;
     position: relative;
@@ -100,8 +81,6 @@
     from { transform: rotateY(0deg); }
     to { transform: rotateY(360deg); }
   }
-
-  /* Tela do celular (area onde a notificação vai) */
   .screen {
     position: absolute;
     top: 28px;
@@ -114,11 +93,10 @@
     box-shadow: inset 0 0 15px #003322;
   }
 
-  /* Notificações descendo */
+  /* Notificação */
   .notification-fall {
     position: absolute;
     top: -40px;
-    width: 180px;
     left: 50%;
     transform: translateX(-50%);
     color: #000;
@@ -127,16 +105,16 @@
     padding: 10px 20px;
     border-radius: 28px;
     box-shadow: 0 0 12px #00ffaa;
-    animation: fall 6s linear infinite;
+    animation: fall 5s linear;
     user-select: none;
   }
   @keyframes fall {
     0% { top: -40px; opacity: 1; }
-    80% { opacity: 1; }
+    90% { opacity: 1; }
     100% { top: 440px; opacity: 0; }
   }
 
-  /* Ebook info */
+  /* Informações do Ebook */
   .ebook-info {
     max-width: 720px;
     margin: 0 auto 50px;
@@ -146,6 +124,17 @@
   }
   .ebook-info strong {
     color: #00ffaa;
+  }
+
+  /* Video Container */
+  .video-container {
+    max-width: 960px;
+    margin: 50px auto;
+  }
+  .video-container video {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #00ffaa;
   }
 
   /* FAQ */
@@ -198,7 +187,7 @@
     display: block;
   }
 
-  /* Compradores aparecendo */
+  /* Compradores */
   .buyers {
     position: fixed;
     bottom: 22px;
@@ -215,7 +204,7 @@
     user-select: none;
   }
 
-  /* WhatsApp fixo */
+  /* WhatsApp */
   .whatsapp {
     position: fixed;
     bottom: 20px;
@@ -238,73 +227,36 @@
     transform: scale(1.1);
   }
 
-  /* Responsividade */
+  /* Responsivo */
   @media (max-width: 600px) {
-    h1.title {
-      font-size: 2.4rem;
-    }
-    .phone-wrapper {
-      width: 160px;
-      height: 350px;
-    }
-    .notification-fall {
-      width: 140px;
-      left: 50%;
-      font-size: 0.9rem;
-    }
-    .ebook-info {
-      font-size: 1rem;
-      max-width: 90vw;
-      margin-bottom: 30px;
-    }
-    .faq-section {
-      max-width: 90vw;
-      margin-bottom: 50px;
-    }
-    .buyers {
-      max-width: 200px;
-      font-size: 0.9rem;
-      padding: 8px 14px;
-      bottom: 18px;
-      left: 14px;
-    }
+    h1.title { font-size: 2.4rem; }
+    .phone-wrapper { width: 160px; height: 350px; }
+    .notification-fall { width: 140px; }
+    .buyers { max-width: 200px; font-size: 0.9rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- Vídeo de Fundo -->
-<video id="bg-video" autoplay muted loop playsinline>
-  <source src="video.mp4" type="video/mp4" />
-  Seu navegador não suporta vídeo em background.
-</video>
-
 <div class="container">
-  <!-- Título Principal -->
   <h1 class="title">O Segredo — Fature Pesado no Orgânico</h1>
 
-  <!-- Descrição -->
   <p class="description">
     Descubra 30 segredos ocultos que os grandes não querem que você saiba.<br />
     Estratégia 100% orgânica, sem precisar investir em anúncios ou aparecer.<br />
     Comece a faturar todos os dias com método testado e comprovado.
   </p>
 
-  <!-- Botão CTA -->
-  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button" target="_blank" rel="noopener noreferrer">
+  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button" target="_blank">
     GARANTIR MEU ACESSO
   </a>
 
-  <!-- Celular 3D Animado -->
-  <div class="phone-wrapper" aria-label="Celular animado girando">
+  <div class="phone-wrapper">
     <div class="phone">
-      <div class="screen" id="notification-screen">
-        <!-- Notificações dinâmicas irão aqui -->
-      </div>
+      <div class="screen" id="notification-screen"></div>
     </div>
   </div>
 
-  <!-- Informações do Ebook -->
   <div class="ebook-info">
     <strong>O que você vai aprender?</strong><br />
     ✔️ Vender no orgânico sem aparecer.<br />
@@ -314,8 +266,16 @@
     ✔️ E muito mais!
   </div>
 
+  <!-- VÍDEO -->
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="video.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+  </div>
+
   <!-- FAQ -->
-  <section class="faq-section" aria-label="Perguntas frequentes">
+  <section class="faq-section">
     <h2>Perguntas Frequentes</h2>
 
     <div class="faq-item" tabindex="0">
@@ -335,16 +295,16 @@
   </section>
 </div>
 
-<!-- Compradores aparecendo -->
-<div class="buyers" aria-live="polite" aria-atomic="true" id="buyers">Ana acabou de comprar</div>
+<!-- Compradores -->
+<div class="buyers" id="buyers">Ana acabou de comprar</div>
 
 <!-- WhatsApp -->
-<div class="whatsapp" aria-label="WhatsApp contato">
-  <a href="https://wa.me/5542991229786?text=Ol%C3%A1!%20Tenho%20interesse%20no%20E-book%20O%20Segredo.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank" rel="noopener noreferrer">💬</a>
+<div class="whatsapp">
+  <a href="https://wa.me/5542991229786?text=Ol%C3%A1!%20Tenho%20interesse%20no%20E-book%20O%20Segredo.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank">💬</a>
 </div>
 
 <script>
-  // FAQ toggle
+  // FAQ
   document.querySelectorAll('.faq-item').forEach(item => {
     item.addEventListener('click', () => {
       item.classList.toggle('active');
@@ -357,7 +317,7 @@
     });
   });
 
-  // Compradores aparecendo um a um
+  // Compradores
   const buyersList = [
     "Ana acabou de comprar",
     "Fernando acabou de comprar",
@@ -379,7 +339,7 @@
   showBuyer();
   setInterval(showBuyer, 3500);
 
-  // Notificações caindo dentro do celular
+  // Notificações no celular
   const notifications = [
     "💰 Venda aprovada - R$35,45",
     "🎉 Nova venda realizada!",
@@ -392,11 +352,12 @@
     const notif = document.createElement('div');
     notif.classList.add('notification-fall');
     notif.textContent = notifications[Math.floor(Math.random() * notifications.length)];
-    notif.style.left = (Math.random() * (screen.clientWidth - 180)) + "px";
+    notif.style.left = "50%";
+    notif.style.transform = "translateX(-50%)";
     screen.appendChild(notif);
     notif.addEventListener('animationend', () => notif.remove());
   }
-  setInterval(createNotification, 2200);
+  setInterval(createNotification, 2300);
 </script>
 </body>
 </html>
