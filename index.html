@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>O Segredo - Página de Vendas</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
     body {
       background: linear-gradient(135deg, #000000, #0d0d0d);
       color: #00ff99;
       overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     header {
       background: #0a0a0a;
-      padding: 10px 20px;
+      width: 100%;
+      padding: 12px 20px;
       text-align: center;
       color: #00ff99;
-      font-weight: bold;
+      font-weight: 600;
       box-shadow: 0 0 10px #00ff99;
-    }
-    header span {
-      color: #00ff00;
+      font-size: 1.15rem;
     }
     h1 {
-      text-align: center;
-      margin: 30px 0 10px;
+      margin: 25px 0 15px;
       font-size: 3rem;
       color: #00ff00;
       text-shadow: 0 0 10px #00ff00;
@@ -43,7 +43,11 @@
       position: relative;
       box-shadow: 0 0 20px #00ff99;
       transform-style: preserve-3d;
-      animation: rotateY 10s linear infinite;
+      animation: rotateY 12s linear infinite;
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     @keyframes rotateY {
       0% { transform: rotateY(0deg); }
@@ -53,34 +57,40 @@
       width: 240px;
       height: 520px;
       background: #000;
-      margin: 30px auto;
       border-radius: 30px;
-      overflow: hidden;
       position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 20px #00ff99;
     }
+    /* Notificação dentro da tela */
     .notification {
       position: absolute;
-      top: -60px;
+      top: 20px;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%) translateY(-100%);
       background: #111;
       border: 2px solid #00ff00;
       color: #00ff00;
-      padding: 10px 20px;
+      padding: 10px 18px;
       border-radius: 10px;
       box-shadow: 0 0 10px #00ff00;
       opacity: 0;
       animation: drop 5s infinite;
+      white-space: nowrap;
+      font-weight: 600;
+      font-size: 0.9rem;
+      z-index: 10;
     }
     @keyframes drop {
-      0% { top: -60px; opacity: 0; }
-      10% { top: 20px; opacity: 1; }
-      50% { top: 20px; opacity: 1; }
-      60% { top: 20px; opacity: 0; }
-      100% { top: -60px; opacity: 0; }
+      0% { transform: translateX(-50%) translateY(-100%); opacity: 0; }
+      10% { transform: translateX(-50%) translateY(0); opacity: 1; }
+      50% { transform: translateX(-50%) translateY(0); opacity: 1; }
+      60% { transform: translateX(-50%) translateY(0); opacity: 0; }
+      100% { transform: translateX(-50%) translateY(-100%); opacity: 0; }
     }
     .video {
-      max-width: 800px;
+      max-width: 700px;
+      width: 90%;
       margin: 20px auto;
       box-shadow: 0 0 20px #00ff99;
       border-radius: 20px;
@@ -88,7 +98,9 @@
     }
     video {
       width: 100%;
+      height: auto;
       display: block;
+      border-radius: 20px;
     }
     .btn {
       background: #00ff00;
@@ -97,13 +109,15 @@
       padding: 15px 50px;
       border-radius: 40px;
       font-size: 1.2rem;
-      font-weight: bold;
+      font-weight: 700;
       cursor: pointer;
       display: block;
       margin: 20px auto;
       box-shadow: 0 0 15px #00ff00;
-      transition: 0.3s;
+      transition: background 0.3s ease;
       text-transform: uppercase;
+      max-width: 280px;
+      text-align: center;
     }
     .btn:hover {
       background: #00cc00;
@@ -112,6 +126,8 @@
       background: transparent;
       border: 2px solid #00ff00;
       color: #00ff00;
+      max-width: 280px;
+      margin-bottom: 40px;
     }
     .btn-secondary:hover {
       background: #00ff00;
@@ -119,56 +135,71 @@
     }
     .faq {
       max-width: 800px;
-      margin: 40px auto;
+      width: 90%;
+      margin: 40px auto 80px;
     }
     .faq-item {
       background: #111;
       border: 2px solid #00ff00;
       border-radius: 10px;
       margin-bottom: 15px;
-      padding: 15px;
+      padding: 15px 20px;
       cursor: pointer;
+      user-select: none;
     }
     .faq-question {
-      font-weight: bold;
+      font-weight: 700;
       display: flex;
       justify-content: space-between;
+      font-size: 1.1rem;
+      color: #00ff99;
     }
     .faq-answer {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease;
+      color: #00ff77;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
     .faq-item.active .faq-answer {
       max-height: 300px;
-      margin-top: 10px;
     }
+    .faq-item.active .faq-question span {
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+    /* Nomes compradores no canto inferior esquerdo */
     .buyers {
       position: fixed;
       bottom: 20px;
       left: 20px;
       background: rgba(0,0,0,0.8);
       color: #00ff00;
-      padding: 10px 15px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      box-shadow: 0 0 10px #00ff00;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 0 15px #00ff00;
+      max-width: 220px;
+      height: 40px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .buyers ul {
-      list-style: none;
-    }
-    .buyers li {
-      margin-bottom: 5px;
+    .buyers span {
       opacity: 0;
-      animation: fadeInOut 8s infinite;
+      animation: fadeInOut 5s infinite;
+      position: absolute;
     }
     @keyframes fadeInOut {
-      0% {opacity: 0;}
-      10% {opacity: 1;}
-      40% {opacity: 1;}
-      50% {opacity: 0;}
-      100% {opacity: 0;}
+      0%, 20% { opacity: 0; }
+      30%, 70% { opacity: 1; }
+      80%, 100% { opacity: 0; }
     }
+    /* Botão WhatsApp canto inferior direito */
     .whatsapp {
       position: fixed;
       bottom: 20px;
@@ -176,15 +207,19 @@
       width: 60px;
       cursor: pointer;
       filter: drop-shadow(0 0 5px #00ff00);
-      transition: 0.3s;
+      transition: transform 0.3s ease;
+      z-index: 100;
     }
     .whatsapp:hover {
       transform: scale(1.1);
     }
-    @media(max-width: 600px) {
-      h1 {font-size: 2rem;}
-      .phone {width: 200px; height: 420px;}
-      .screen {width: 170px; height: 380px;}
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .phone { width: 220px; height: 460px; }
+      .screen { width: 190px; height: 430px; }
+      .btn, .btn-secondary { max-width: 90vw; }
+      .buyers { max-width: 150px; font-size: 0.9rem; height: 35px; }
+      .whatsapp { width: 50px; }
     }
   </style>
 </head>
@@ -194,9 +229,10 @@
 
 <h1>O Segredo</h1>
 
-<div class="phone">
-  <div class="notification" id="notification"></div>
-  <div class="screen"></div>
+<div class="phone" aria-label="Animação de celular">
+  <div class="screen" aria-live="polite" aria-atomic="true">
+    <div class="notification" id="notification"></div>
+  </div>
 </div>
 
 <div class="video">
@@ -204,39 +240,35 @@
 </div>
 
 <button class="btn" onclick="window.open('https://pay.kiwify.com.br/1hpTVDK', '_blank')">QUERO AGORA</button>
-
 <button class="btn btn-secondary" onclick="window.location.href='oferta.html'">NÃO INTERESSADO</button>
 
-<div class="faq">
-  <div class="faq-item">
+<div class="faq" role="region" aria-label="Perguntas frequentes">
+  <div class="faq-item" tabindex="0">
     <div class="faq-question">O que vou aprender?<span>+</span></div>
     <div class="faq-answer">Os 30 segredos mais guardados do marketing orgânico, que os grandes não querem que você saiba.</div>
   </div>
-  <div class="faq-item">
+  <div class="faq-item" tabindex="0">
     <div class="faq-question">Preciso ter experiência?<span>+</span></div>
     <div class="faq-answer">Não. É um passo a passo prático, direto e simples até pra quem nunca começou.</div>
   </div>
-  <div class="faq-item">
+  <div class="faq-item" tabindex="0">
     <div class="faq-question">Quanto tempo leva pra ter resultado?<span>+</span></div>
     <div class="faq-answer">Em até 30 dias aplicando, você já pode começar a ter resultados reais.</div>
   </div>
-  <div class="faq-item">
+  <div class="faq-item" tabindex="0">
     <div class="faq-question">Tem garantia?<span>+</span></div>
     <div class="faq-answer">Sim. Garantia de 7 dias. Se não gostar, pode pedir seu dinheiro de volta.</div>
   </div>
 </div>
 
-<div class="buyers">
-  <strong>Comprando agora:</strong>
-  <ul id="buyers"></ul>
-</div>
+<div class="buyers" aria-live="polite" aria-atomic="true" id="buyers"></div>
 
-<a href="https://wa.me/5542991229786" target="_blank">
-  <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" class="whatsapp">
+<a href="https://wa.me/5542991229786" target="_blank" rel="noopener noreferrer">
+  <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" class="whatsapp" />
 </a>
 
 <script>
-  // Notificação com valores aleatórios
+  // Notificação com valores aleatórios e animação de cair e sumir
   const notification = document.getElementById('notification');
   const values = ['35,45', '49,90', '67,00', '89,99', '55,50'];
   function showNotification() {
@@ -246,27 +278,40 @@
   setInterval(showNotification, 5000);
   showNotification();
 
-  // FAQ
+  // FAQ interativo
   document.querySelectorAll('.faq-item').forEach(item => {
     item.addEventListener('click', () => {
       item.classList.toggle('active');
       const span = item.querySelector('span');
       span.innerText = item.classList.contains('active') ? '-' : '+';
     });
+    item.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        item.click();
+      }
+    });
   });
 
-  // Nomes aparecendo e sumindo
+  // Nomes aparecendo um por vez
   const buyers = ['Gabriel M.', 'Ana S.', 'Lucas F.', 'Mariana T.', 'Pedro C.', 'Julia R.', 'Rafael V.', 'Beatriz N.', 'Fernando K.', 'Larissa P.'];
-  const buyersList = document.getElementById('buyers');
+  const buyersDiv = document.getElementById('buyers');
+  let index = 0;
   function showBuyers() {
-    buyersList.innerHTML = '';
-    buyers.forEach(name => {
-      const li = document.createElement('li');
-      li.textContent = name;
-      buyersList.appendChild(li);
-    });
+    buyersDiv.textContent = buyers[index];
+    buyersDiv.style.opacity = 0;
+    setTimeout(() => {
+      buyersDiv.style.transition = 'opacity 1s';
+      buyersDiv.style.opacity = 1;
+    }, 100);
+    index++;
+    if(index >= buyers.length) index = 0;
   }
   showBuyers();
+  setInterval(() => {
+    buyersDiv.style.opacity = 0;
+    setTimeout(showBuyers, 1000);
+  }, 4000);
 </script>
 
 </body>
