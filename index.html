@@ -8,75 +8,82 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
+
     body {
-      background: linear-gradient(135deg, #000000, #0d0d0d);
-      color: #a0f0d1; /* verde água suave */
+      background: linear-gradient(135deg, #000, #0a0a0a);
+      color: #c2f5e9;
       overflow-x: hidden;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 60px;
     }
+
     header {
       background: #0a0a0a;
       width: 100%;
-      padding: 12px 20px;
+      padding: 14px 20px;
       text-align: center;
-      color: #4df3a1; /* verde neon moderado */
+      color: #4df3a1;
       font-weight: 600;
       box-shadow: 0 0 8px #4df3a1;
       font-size: 1.15rem;
       letter-spacing: 1px;
     }
+
     h1 {
-      margin: 30px 0 10px;
+      margin: 40px 0 12px;
       font-size: 3rem;
-      color: #34d399; /* verde água forte */
+      color: #34d399;
       text-shadow: 0 0 10px #34d399;
       font-weight: 700;
-    }
-    .subtitle {
-      color: #c3f7e1; /* verde água bem claro */
-      font-size: 1.2rem;
-      max-width: 650px;
       text-align: center;
-      margin-bottom: 30px;
-      line-height: 1.5;
-      font-weight: 500;
-      padding: 0 10px;
     }
+
+    .subtitle {
+      color: #e9fef9;
+      font-size: 1.2rem;
+      max-width: 700px;
+      text-align: center;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      padding: 0 12px;
+      font-weight: 500;
+    }
+
     .phone {
-      width: 210px;
-      height: 430px;
+      width: 200px;
+      height: 420px;
       background: #111;
       border-radius: 40px;
-      margin: 0 auto 30px;
+      margin-bottom: 40px;
       position: relative;
-      box-shadow: 0 0 25px #34d399;
-      transform-style: preserve-3d;
+      box-shadow: 0 0 18px #34d399;
       animation: rotateY 14s linear infinite;
-      perspective: 1200px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     @keyframes rotateY {
       0% { transform: rotateY(0deg); }
       100% { transform: rotateY(360deg); }
     }
+
     .screen {
-      width: 170px;
-      height: 370px;
+      width: 165px;
+      height: 360px;
       background: #000;
       border-radius: 30px;
       position: relative;
       overflow: hidden;
-      box-shadow: inset 0 0 22px #34d399;
+      box-shadow: inset 0 0 20px #34d399;
     }
+
     .notification {
       position: absolute;
       top: 20px;
@@ -93,9 +100,9 @@
       white-space: nowrap;
       font-weight: 600;
       font-size: 0.9rem;
-      z-index: 10;
       backdrop-filter: blur(3px);
     }
+
     @keyframes drop {
       0% { transform: translateX(-50%) translateY(-100%); opacity: 0; }
       10% { transform: translateX(-50%) translateY(0); opacity: 1; }
@@ -103,20 +110,22 @@
       60% { transform: translateX(-50%) translateY(0); opacity: 0; }
       100% { transform: translateX(-50%) translateY(-100%); opacity: 0; }
     }
+
     .video {
-      max-width: 580px;
+      max-width: 480px;
       width: 90%;
-      margin: 0 auto 40px;
-      box-shadow: 0 0 18px #34d399cc;
+      margin-bottom: 40px;
+      box-shadow: 0 0 15px #34d399cc;
       border-radius: 18px;
       overflow: hidden;
     }
+
     video {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 18px;
     }
+
     .btn {
       background: #34d399;
       color: #000;
@@ -134,9 +143,11 @@
       max-width: 280px;
       text-align: center;
     }
+
     .btn:hover {
       background: #28b785;
     }
+
     .btn-secondary {
       background: transparent;
       border: 2px solid #34d399;
@@ -144,53 +155,12 @@
       max-width: 280px;
       margin-bottom: 40px;
     }
+
     .btn-secondary:hover {
       background: #34d399;
       color: #000;
     }
-    .faq {
-      max-width: 760px;
-      width: 90%;
-      margin: 40px auto 80px;
-    }
-    .faq-item {
-      background: #111;
-      border: 2px solid #34d399;
-      border-radius: 12px;
-      margin-bottom: 16px;
-      padding: 18px 22px;
-      cursor: pointer;
-      user-select: none;
-      transition: background-color 0.3s ease;
-    }
-    .faq-item:hover {
-      background-color: #002b22;
-    }
-    .faq-question {
-      font-weight: 700;
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.15rem;
-      color: #34d399;
-      user-select: none;
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.45s ease;
-      color: #c3f7e1;
-      margin-top: 12px;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    .faq-item.active .faq-answer {
-      max-height: 350px;
-    }
-    .faq-item.active .faq-question span {
-      transform: rotate(45deg);
-      transition: transform 0.3s ease;
-    }
-    /* Nomes compradores no canto inferior esquerdo */
+
     .buyers {
       position: fixed;
       bottom: 20px;
@@ -199,29 +169,18 @@
       color: #34d399;
       padding: 12px 20px;
       border-radius: 12px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       box-shadow: 0 0 18px #34d399;
-      max-width: 230px;
+      max-width: 240px;
       height: 42px;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       user-select: none;
       font-style: italic;
     }
-    .buyers span {
-      opacity: 0;
-      animation: fadeInOut 5s infinite;
-      position: absolute;
-    }
-    @keyframes fadeInOut {
-      0%, 20% { opacity: 0; }
-      30%, 70% { opacity: 1; }
-      80%, 100% { opacity: 0; }
-    }
-    /* Botão WhatsApp canto inferior direito */
+
     .whatsapp {
       position: fixed;
       bottom: 20px;
@@ -232,28 +191,33 @@
       transition: transform 0.3s ease;
       z-index: 100;
     }
+
     .whatsapp:hover {
       transform: scale(1.15);
     }
+
     @media (max-width: 600px) {
-      h1 { font-size: 2.2rem; }
-      .phone { width: 170px; height: 350px; margin-bottom: 20px; }
-      .screen { width: 140px; height: 300px; }
-      .btn, .btn-secondary { max-width: 90vw; }
-      .buyers { max-width: 160px; font-size: 1rem; height: 38px; }
+      h1 { font-size: 2.3rem; }
+      .phone { width: 160px; height: 330px; }
+      .screen { width: 130px; height: 280px; }
+      .buyers { max-width: 160px; font-size: 0.9rem; }
       .whatsapp { width: 48px; }
     }
   </style>
 </head>
+
 <body>
 
 <header>O Segredo — O guia definitivo pra você faturar pesado no orgânico.</header>
 
 <h1>O Segredo</h1>
-<div class="subtitle">Aprenda os 30 segredos que os grandes nunca revelam para dominar o marketing orgânico e transformar seus resultados sem gastar com anúncios.</div>
+<div class="subtitle">
+  <strong>⚡ Aprenda os 30 segredos que os grandes não querem que você saiba.</strong><br>
+  Acelere seus ganhos no marketing digital orgânico, mesmo sem investir em anúncios. Estratégias diretas, validadas, práticas e que realmente funcionam.
+</div>
 
-<div class="phone" aria-label="Animação de celular">
-  <div class="screen" aria-live="polite" aria-atomic="true">
+<div class="phone">
+  <div class="screen">
     <div class="notification" id="notification"></div>
   </div>
 </div>
@@ -262,36 +226,17 @@
   <video src="video.mp4" controls></video>
 </div>
 
-<button class="btn" onclick="window.open('https://pay.kiwify.com.br/1hpTVDK', '_blank')">QUERO AGORA</button>
+<button class="btn" onclick="window.open('https://pay.kiwify.com.br/1hpTVDK', '_blank')">GARANTIR MEU ACESSO</button>
 <button class="btn btn-secondary" onclick="window.location.href='oferta.html'">NÃO INTERESSADO</button>
 
-<div class="faq" role="region" aria-label="Perguntas frequentes">
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">O que vou aprender?<span>+</span></div>
-    <div class="faq-answer">Os 30 segredos mais guardados do marketing orgânico, que os grandes não querem que você saiba.</div>
-  </div>
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Preciso ter experiência?<span>+</span></div>
-    <div class="faq-answer">Não. É um passo a passo prático, direto e simples até pra quem nunca começou.</div>
-  </div>
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Quanto tempo leva pra ter resultado?<span>+</span></div>
-    <div class="faq-answer">Em até 30 dias aplicando, você já pode começar a ter resultados reais.</div>
-  </div>
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Tem garantia?<span>+</span></div>
-    <div class="faq-answer">Sim. Garantia de 7 dias. Se não gostar, pode pedir seu dinheiro de volta.</div>
-  </div>
-</div>
+<div class="buyers" id="buyers"></div>
 
-<div class="buyers" aria-live="polite" aria-atomic="true" id="buyers"></div>
-
-<a href="https://wa.me/5542991229786" target="_blank" rel="noopener noreferrer" aria-label="Contato WhatsApp">
+<a href="https://wa.me/5542991229786" target="_blank">
   <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" class="whatsapp" />
 </a>
 
 <script>
-  // Notificação com valores aleatórios e animação de cair e sumir
+  // Notificação na tela do celular
   const notification = document.getElementById('notification');
   const values = ['35,45', '49,90', '67,00', '89,99', '55,50'];
   function showNotification() {
@@ -301,25 +246,22 @@
   setInterval(showNotification, 5000);
   showNotification();
 
-  // FAQ interativo
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('active');
-      const span = item.querySelector('span');
-      span.innerText = item.classList.contains('active') ? '-' : '+';
-    });
-    item.addEventListener('keydown', e => {
-      if(e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        item.click();
-      }
-    });
-  });
-
-  // Nomes aparecendo um por vez
-  const buyers = ['Gabriel M.', 'Ana S.', 'Lucas F.', 'Mariana T.', 'Pedro C.', 'Julia R.', 'Rafael V.', 'Beatriz N.', 'Fernando K.', 'Larissa P.'];
+  // Compradores canto inferior
+  const buyers = [
+    'Ana acabou de comprar',
+    'Fernando garantiu o acesso',
+    'Beatriz realizou uma compra',
+    'Rafael entrou agora',
+    'Larissa acabou de comprar',
+    'Pedro garantiu o acesso',
+    'Mariana entrou na comunidade',
+    'Lucas acabou de comprar',
+    'Gabriel garantiu agora',
+    'Julia realizou uma compra'
+  ];
   const buyersDiv = document.getElementById('buyers');
   let index = 0;
+
   function showBuyers() {
     buyersDiv.textContent = buyers[index];
     buyersDiv.style.opacity = 0;
@@ -328,7 +270,7 @@
       buyersDiv.style.opacity = 1;
     }, 100);
     index++;
-    if(index >= buyers.length) index = 0;
+    if (index >= buyers.length) index = 0;
   }
   showBuyers();
   setInterval(() => {
