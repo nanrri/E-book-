@@ -1,388 +1,272 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>O Segredo - Página de Vendas</title>
-<style>
-  /* Reset básico */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  body {
-    background-color: #000;
-    color: #00ff00;
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    padding: 20px;
-  }
-  h1 {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-shadow: 0 0 8px #00ff00;
-  }
-  /* Container central */
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  /* Celular com animação girando */
-  .phone-wrapper {
-    position: relative;
-    width: 280px;
-    height: 580px;
-    margin: 0 auto 30px;
-    animation: spin 20s linear infinite;
-    border-radius: 40px;
-    box-shadow:
-      0 0 15px #00ff00,
-      inset 0 0 12px #00ff00;
-    background: #111;
-    overflow: visible;
-  }
-  @keyframes spin {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-  }
-  .phone-screen {
-    position: relative;
-    width: 260px;
-    height: 540px;
-    margin: 20px auto;
-    background: #222;
-    border-radius: 35px;
-    overflow: hidden;
-    box-shadow:
-      inset 0 0 20px #00ff00;
-  }
-  /* Notificação Kiwify caindo */
-  .notification {
-    position: absolute;
-    top: -80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 220px;
-    padding: 15px 20px;
-    background: #121212;
-    border: 2px solid #00ff00;
-    border-radius: 10px;
-    color: #00ff00;
-    font-weight: 600;
-    font-size: 1rem;
-    box-shadow: 0 0 8px #00ff00;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    opacity: 0;
-    animation: dropNotification 6s linear infinite;
-  }
-  @keyframes dropNotification {
-    0% {
-      top: -80px;
-      opacity: 0;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Segredo - Página de Vendas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
-    10% {
-      opacity: 1;
-      top: 20px;
+    body {
+      background: linear-gradient(135deg, #000000, #0d0d0d);
+      color: #00ff99;
+      overflow-x: hidden;
     }
-    60% {
-      top: 20px;
-      opacity: 1;
+    header {
+      background: #0a0a0a;
+      padding: 10px 20px;
+      text-align: center;
+      color: #00ff99;
+      font-weight: bold;
+      box-shadow: 0 0 10px #00ff99;
     }
-    80% {
-      opacity: 0;
-      top: -80px;
+    header span {
+      color: #00ff00;
     }
-    100% {
-      top: -80px;
-      opacity: 0;
-    }
-  }
-  .notification img {
-    width: 32px;
-    height: 32px;
-    filter: drop-shadow(0 0 2px #00ff00);
-  }
-  /* Vídeo explicativo */
-  .video-container {
-    margin: 30px auto;
-    max-width: 800px;
-    box-shadow: 0 0 20px #00ff00;
-    border-radius: 15px;
-    overflow: hidden;
-  }
-  video {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  /* FAQ */
-  .faq {
-    margin: 40px 0;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .faq-item {
-    background: #121212;
-    border: 2px solid #00ff00;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    padding: 15px 20px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  .faq-item:hover {
-    background: #003300;
-  }
-  .faq-question {
-    font-weight: 700;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .faq-answer {
-    margin-top: 10px;
-    font-weight: 400;
-    line-height: 1.4;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
-  .faq-item.active .faq-answer {
-    max-height: 300px;
-  }
-  /* Canto inferior esquerdo - nomes aleatórios */
-  .buyers-left {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    max-width: 180px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #00ff00;
-    text-shadow: 0 0 4px #00ff00;
-    background: rgba(0,0,0,0.8);
-    padding: 10px;
-    border-radius: 8px;
-    user-select: none;
-  }
-  /* Canto inferior direito - WhatsApp */
-  .whatsapp-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    filter: drop-shadow(0 0 5px #00ff00);
-    transition: transform 0.2s ease;
-    user-select: none;
-  }
-  .whatsapp-icon:hover {
-    transform: scale(1.1);
-  }
-  /* Botão principal */
-  .btn-buy {
-    background: #00ff00;
-    border: none;
-    color: #000;
-    font-weight: 700;
-    padding: 18px 40px;
-    font-size: 1.3rem;
-    border-radius: 40px;
-    cursor: pointer;
-    box-shadow: 0 0 15px #00ff00;
-    margin: 20px auto 10px;
-    display: block;
-    transition: background 0.3s ease;
-    text-transform: uppercase;
-  }
-  .btn-buy:hover {
-    background: #00cc00;
-  }
-  /* Botão NÃO INTERESSADO */
-  .btn-not-interested {
-    background: transparent;
-    border: 2px solid #00ff00;
-    color: #00ff00;
-    font-weight: 600;
-    padding: 14px 30px;
-    font-size: 1.1rem;
-    border-radius: 40px;
-    cursor: pointer;
-    margin: 10px auto 30px;
-    display: block;
-    transition: background 0.3s ease, color 0.3s ease;
-    text-transform: uppercase;
-    max-width: 300px;
-  }
-  .btn-not-interested:hover {
-    background: #00ff00;
-    color: #000;
-  }
-  /* Responsividade */
-  @media (max-width: 600px) {
     h1 {
-      font-size: 2.2rem;
+      text-align: center;
+      margin: 30px 0 10px;
+      font-size: 3rem;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00;
     }
-    .phone-wrapper {
-      width: 200px;
-      height: 420px;
-      animation: spin 40s linear infinite;
+    .phone {
+      width: 280px;
+      height: 580px;
+      background: #111;
+      border-radius: 40px;
+      margin: 20px auto;
+      position: relative;
+      box-shadow: 0 0 20px #00ff99;
+      transform-style: preserve-3d;
+      animation: rotateY 10s linear infinite;
     }
-    .phone-screen {
-      width: 180px;
-      height: 400px;
+    @keyframes rotateY {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+    .screen {
+      width: 240px;
+      height: 520px;
+      background: #000;
+      margin: 30px auto;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
     }
     .notification {
-      width: 160px;
-      font-size: 0.85rem;
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #111;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ff00;
+      opacity: 0;
+      animation: drop 5s infinite;
+    }
+    @keyframes drop {
+      0% { top: -60px; opacity: 0; }
+      10% { top: 20px; opacity: 1; }
+      50% { top: 20px; opacity: 1; }
+      60% { top: 20px; opacity: 0; }
+      100% { top: -60px; opacity: 0; }
+    }
+    .video {
+      max-width: 800px;
+      margin: 20px auto;
+      box-shadow: 0 0 20px #00ff99;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    video {
+      width: 100%;
+      display: block;
+    }
+    .btn {
+      background: #00ff00;
+      color: #000;
+      border: none;
+      padding: 15px 50px;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 0 15px #00ff00;
+      transition: 0.3s;
+      text-transform: uppercase;
+    }
+    .btn:hover {
+      background: #00cc00;
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+    }
+    .btn-secondary:hover {
+      background: #00ff00;
+      color: #000;
+    }
+    .faq {
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    .faq-item {
+      background: #111;
+      border: 2px solid #00ff00;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      padding: 15px;
+      cursor: pointer;
+    }
+    .faq-question {
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      margin-top: 10px;
+    }
+    .buyers {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0,0,0,0.8);
+      color: #00ff00;
       padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      box-shadow: 0 0 10px #00ff00;
     }
-    .buyers-left {
-      max-width: 140px;
-      font-size: 0.7rem;
-      bottom: 15px;
-      left: 10px;
-      padding: 8px;
+    .buyers ul {
+      list-style: none;
     }
-    .whatsapp-icon {
-      width: 45px;
-      height: 45px;
-      bottom: 15px;
-      right: 10px;
+    .buyers li {
+      margin-bottom: 5px;
+      opacity: 0;
+      animation: fadeInOut 8s infinite;
     }
-  }
-</style>
+    @keyframes fadeInOut {
+      0% {opacity: 0;}
+      10% {opacity: 1;}
+      40% {opacity: 1;}
+      50% {opacity: 0;}
+      100% {opacity: 0;}
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      cursor: pointer;
+      filter: drop-shadow(0 0 5px #00ff00);
+      transition: 0.3s;
+    }
+    .whatsapp:hover {
+      transform: scale(1.1);
+    }
+    @media(max-width: 600px) {
+      h1 {font-size: 2rem;}
+      .phone {width: 200px; height: 420px;}
+      .screen {width: 170px; height: 380px;}
+    }
+  </style>
 </head>
 <body>
 
+<header>O Segredo — O guia definitivo pra você faturar pesado no orgânico.</header>
+
 <h1>O Segredo</h1>
 
-<div class="container">
-  <div class="phone-wrapper" aria-label="Animação celular iPhone girando">
-    <div class="notification" aria-live="polite" role="alert">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Ícone Kiwify" />
-      Nova venda Kiwify! + R$35,45
-    </div>
-    <div class="phone-screen">
-      <!-- Tela do celular (pode colocar algum fundo sutil aqui se quiser) -->
-    </div>
-  </div>
-
-  <div class="video-container">
-    <video controls preload="metadata" src="video.mp4" aria-label="Vídeo explicativo do e-book"></video>
-  </div>
-
-  <button class="btn-buy" onclick="window.open('https://pay.kiwify.com.br/1hpTVDK', '_blank')">
-    QUERO AGORA
-  </button>
-
-  <button class="btn-not-interested" id="btnNotInterested">
-    NÃO INTERESSADO
-  </button>
-
-  <section class="faq" aria-label="Perguntas frequentes">
-    <div class="faq-item" tabindex="0">
-      <div class="faq-question">O que vou aprender neste e-book? <span>+</span></div>
-      <div class="faq-answer">
-        Você vai descobrir 30 segredos exclusivos para crescer e faturar no marketing orgânico, sem precisar investir em anúncios.
-      </div>
-    </div>
-    <div class="faq-item" tabindex="0">
-      <div class="faq-question">Preciso ter experiência para aplicar? <span>+</span></div>
-      <div class="faq-answer">
-        Não! O conteúdo é feito para iniciantes e para quem já está no jogo, tudo explicado passo a passo.
-      </div>
-    </div>
-    <div class="faq-item" tabindex="0">
-      <div class="faq-question">Quanto tempo para ver resultados? <span>+</span></div>
-      <div class="faq-answer">
-        Com dedicação diária, você pode começar a ver resultados em até 30 dias.
-      </div>
-    </div>
-    <div class="faq-item" tabindex="0">
-      <div class="faq-question">Tem garantia de satisfação? <span>+</span></div>
-      <div class="faq-answer">
-        Sim! Se não gostar, você pode pedir reembolso em até 7 dias.
-      </div>
-    </div>
-  </section>
+<div class="phone">
+  <div class="notification" id="notification"></div>
+  <div class="screen"></div>
 </div>
 
-<div class="buyers-left" aria-live="polite" aria-label="Pessoas comprando">
+<div class="video">
+  <video src="video.mp4" controls></video>
+</div>
+
+<button class="btn" onclick="window.open('https://pay.kiwify.com.br/1hpTVDK', '_blank')">QUERO AGORA</button>
+
+<button class="btn btn-secondary" onclick="window.location.href='oferta.html'">NÃO INTERESSADO</button>
+
+<div class="faq">
+  <div class="faq-item">
+    <div class="faq-question">O que vou aprender?<span>+</span></div>
+    <div class="faq-answer">Os 30 segredos mais guardados do marketing orgânico, que os grandes não querem que você saiba.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Preciso ter experiência?<span>+</span></div>
+    <div class="faq-answer">Não. É um passo a passo prático, direto e simples até pra quem nunca começou.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Quanto tempo leva pra ter resultado?<span>+</span></div>
+    <div class="faq-answer">Em até 30 dias aplicando, você já pode começar a ter resultados reais.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Tem garantia?<span>+</span></div>
+    <div class="faq-answer">Sim. Garantia de 7 dias. Se não gostar, pode pedir seu dinheiro de volta.</div>
+  </div>
+</div>
+
+<div class="buyers">
   <strong>Comprando agora:</strong>
-  <ul id="buyersList">
-    <!-- Lista dinâmica por JS -->
-  </ul>
+  <ul id="buyers"></ul>
 </div>
 
-<a href="https://wa.me/5542991229786" target="_blank" rel="noopener" aria-label="Contato WhatsApp">
-  <img
-    src="https://cdn-icons-png.flaticon.com/512/124/124034.png"
-    alt="Ícone WhatsApp"
-    class="whatsapp-icon"
-  />
+<a href="https://wa.me/5542991229786" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" class="whatsapp">
 </a>
 
 <script>
-  // Animação notificação Kiwify caindo (já está via CSS keyframes)
+  // Notificação com valores aleatórios
+  const notification = document.getElementById('notification');
+  const values = ['35,45', '49,90', '67,00', '89,99', '55,50'];
+  function showNotification() {
+    const randomValue = values[Math.floor(Math.random() * values.length)];
+    notification.innerText = `Nova venda na Kiwify! +R$${randomValue}`;
+  }
+  setInterval(showNotification, 5000);
+  showNotification();
 
-  // FAQ interação expandir/fechar
+  // FAQ
   document.querySelectorAll('.faq-item').forEach(item => {
     item.addEventListener('click', () => {
       item.classList.toggle('active');
-      // Alterna o + e -
-      const span = item.querySelector('.faq-question span');
-      span.textContent = item.classList.contains('active') ? '-' : '+';
-    });
-    item.addEventListener('keydown', e => {
-      if(e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        item.click();
-      }
+      const span = item.querySelector('span');
+      span.innerText = item.classList.contains('active') ? '-' : '+';
     });
   });
 
-  // Lista de nomes aleatórios comprando (10 nomes)
-  const names = [
-    "Gabriel M.",
-    "Ana S.",
-    "Lucas F.",
-    "Mariana T.",
-    "Pedro C.",
-    "Julia R.",
-    "Rafael V.",
-    "Beatriz N.",
-    "Fernando K.",
-    "Larissa P."
-  ];
-  const buyersList = document.getElementById('buyersList');
-  function populateBuyers() {
+  // Nomes aparecendo e sumindo
+  const buyers = ['Gabriel M.', 'Ana S.', 'Lucas F.', 'Mariana T.', 'Pedro C.', 'Julia R.', 'Rafael V.', 'Beatriz N.', 'Fernando K.', 'Larissa P.'];
+  const buyersList = document.getElementById('buyers');
+  function showBuyers() {
     buyersList.innerHTML = '';
-    names.forEach(name => {
+    buyers.forEach(name => {
       const li = document.createElement('li');
       li.textContent = name;
       buyersList.appendChild(li);
     });
   }
-  populateBuyers();
-
-  // Botão NÃO INTERESSADO abre nova página oferta relâmpago
-  document.getElementById('btnNotInterested').addEventListener('click', () => {
-    window.location.href = 'oferta.html';
-  });
+  showBuyers();
 </script>
 
 </body>
