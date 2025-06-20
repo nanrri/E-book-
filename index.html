@@ -3,27 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Segredo - E-book Revelador</title>
+<title>O Segredo — Fature Pesado no Orgânico</title>
 <style>
-/* Fundo Galáxia Animada */
-body {
+/* === Estilo Global === */
+* {
   margin: 0;
-  overflow-x: hidden;
-  background: #000;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-  background: radial-gradient(ellipse at center, #000 0%, #020202 100%);
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
+body {
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* === Fundo Estrelado === */
 body::before {
   content: '';
   position: fixed;
   width: 200%;
   height: 200%;
   background: repeating-radial-gradient(#00ffaa 2px, transparent 5px);
-  animation: moveStars 50s linear infinite;
+  animation: moveStars 60s linear infinite;
   z-index: -1;
-  opacity: 0.08;
+  opacity: 0.06;
 }
 
 @keyframes moveStars {
@@ -31,55 +36,65 @@ body::before {
   100% {transform: translate(-500px, 500px);}
 }
 
-/* Hero */
+/* === Barra Superior === */
+header {
+  background: #0a0a0a;
+  color: #00ffaa;
+  text-align: center;
+  padding: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px #00ffaa;
+}
+
+/* === Hero === */
 .hero {
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(to bottom, #000, #00ffaa12);
+  padding: 70px 20px 40px;
 }
 
 .hero h1 {
   font-size: 3rem;
   color: #00ffaa;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ffaa;
 }
 
 .hero p {
   font-size: 1.2rem;
   color: #ccc;
   max-width: 700px;
-  margin: 20px auto;
+  margin: 0 auto 30px;
 }
 
 .cta-button {
   background: #00ffaa;
   color: #000;
-  padding: 15px 30px;
-  border: none;
+  padding: 15px 40px;
   border-radius: 50px;
+  border: none;
   cursor: pointer;
   font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: 0.3s;
+  box-shadow: 0 0 18px #00ffaa;
   text-decoration: none;
-  box-shadow: 0 0 20px #00ffaa;
 }
 
 .cta-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 35px #00ffaa;
+  box-shadow: 0 0 28px #00ffaa;
 }
 
-/* iPhone Girando */
+/* === iPhone Girando === */
 .iphone {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 40px 0;
-  position: relative;
+  margin: 40px 0;
 }
 
 .iphone img {
   width: 180px;
-  animation: spin 10s infinite linear;
+  animation: spin 14s infinite linear;
 }
 
 @keyframes spin {
@@ -87,57 +102,31 @@ body::before {
   to {transform: rotateY(360deg);}
 }
 
-/* Notificação flutuante */
+/* === Notificação no Topo === */
 .notification {
   position: fixed;
-  top: 20px;
+  top: 18px;
   left: 50%;
   transform: translateX(-50%);
   background: #00ffaa;
   color: #000;
   padding: 8px 18px;
   border-radius: 20px;
-  box-shadow: 0 0 10px #00ffaa;
+  box-shadow: 0 0 12px #00ffaa;
   animation: float 4s infinite;
   z-index: 999;
 }
 
 @keyframes float {
   0% {transform: translateX(-50%) translateY(0);}
-  50% {transform: translateX(-50%) translateY(20px);}
+  50% {transform: translateX(-50%) translateY(15px);}
   100% {transform: translateX(-50%) translateY(0);}
 }
 
-/* Notificações Caindo */
-.falling-notifications {
-  position: fixed;
-  top: -50px;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
-  z-index: 998;
-}
-
-.falling-notifications div {
-  position: absolute;
-  top: 0;
-  background: #00ffaa;
-  color: #000;
-  padding: 5px 10px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px #00ffaa;
-  animation: fall 6s linear infinite;
-}
-
-@keyframes fall {
-  0% {transform: translateY(0);}
-  100% {transform: translateY(120vh);}
-}
-
-/* Ebook Showcase */
+/* === Ebook Showcase === */
 .ebook-showcase {
-  background: #121212;
-  padding: 40px 20px;
+  background: #0a0a0a;
+  padding: 50px 20px;
   text-align: center;
 }
 
@@ -151,12 +140,13 @@ body::before {
   max-width: 700px;
   margin: 0 auto;
   font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* FAQ */
+/* === FAQ === */
 .faq-section {
-  background: #121212;
-  padding: 50px 20px;
+  background: #0a0a0a;
+  padding: 60px 20px;
 }
 
 .faq-section h2 {
@@ -173,9 +163,9 @@ body::before {
 .faq-item {
   background: #111;
   border: 1px solid #00ffaa;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 18px;
 }
 
 .faq-item h3 {
@@ -185,10 +175,11 @@ body::before {
 
 .faq-item p {
   display: none;
-  margin-top: 10px;
+  margin-top: 12px;
+  color: #ccc;
 }
 
-/* WhatsApp */
+/* === WhatsApp === */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -205,29 +196,46 @@ body::before {
   font-size: 24px;
   box-shadow: 0 0 15px #25D366;
 }
+
+/* === Compradores === */
+.buyers {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.85);
+  color: #00ffaa;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 0 15px #00ffaa;
+}
+
+/* === Responsivo === */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2.3rem; }
+  .iphone img { width: 150px; }
+  .buyers { font-size: 0.9rem; padding: 8px 14px; }
+  .cta-button { padding: 12px 28px; font-size: 1rem; }
+}
 </style>
 </head>
+
 <body>
 
-<!-- Notificação Fixa -->
-<div class="notification">
-  💸 Venda Aprovada - R$197,00
-</div>
+<header>🚀 O Segredo — O guia definitivo pra você faturar pesado no orgânico.</header>
 
-<!-- Notificações Caindo -->
-<div class="falling-notifications">
-  <div style="left:10%;">💰 Venda - R$197</div>
-  <div style="left:30%; animation-delay: 2s;">💰 Venda - R$197</div>
-  <div style="left:50%; animation-delay: 4s;">💰 Venda - R$197</div>
-  <div style="left:70%; animation-delay: 3s;">💰 Venda - R$197</div>
+<!-- Notificação -->
+<div class="notification">
+ 💸 Venda Aprovada - R$35,45
 </div>
 
 <!-- Hero -->
-<div class="hero">
-  <h1>🚀 O Segredo Para Ganhar no Orgânico</h1>
-  <p>Descubra os segredos ocultos que os grandes não querem te contar. Método validado, 100% sem investir em tráfego pago!</p>
-  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">QUERO MEU ACESSO</a>
-</div>
+<section class="hero">
+  <h1>O Segredo Para Ganhar no Orgânico</h1>
+  <p>Aprenda os 30 segredos que os grandes não querem que você saiba. Estratégia prática, validada e 100% no orgânico, sem aparecer e sem investir em tráfego pago.</p>
+  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">GARANTIR MEU ACESSO</a>
+</section>
 
 <!-- iPhone -->
 <div class="iphone">
@@ -235,41 +243,45 @@ body::before {
 </div>
 
 <!-- Ebook Showcase -->
-<div class="ebook-showcase">
-  <h2>O que você vai aprender no E-book?</h2>
+<section class="ebook-showcase">
+  <h2>O que você vai aprender?</h2>
   <p>✔️ Como vender no orgânico sem aparecer.<br>
-     ✔️ Gerar vendas todos os dias sem investir.<br>
-     ✔️ Técnicas secretas que ninguém te conta.<br>
-     ✔️ Criar sua estrutura que vende no automático.<br>
+     ✔️ Técnicas secretas que os grandes escondem.<br>
+     ✔️ Vendas diárias no automático, sem tráfego pago.<br>
+     ✔️ Como construir sua máquina de vendas invisível.<br>
      ✔️ E muito mais…</p>
   <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">ACESSAR AGORA</a>
-</div>
+</section>
 
 <!-- FAQ -->
-<div class="faq-section">
+<section class="faq-section">
   <h2>Perguntas Frequentes</h2>
   <div class="faq">
     <div class="faq-item">
       <h3>❓ Preciso aparecer?</h3>
-      <p>Não! O método é 100% sem aparecer, usando estratégias ocultas e profissionais.</p>
+      <p>Não! O método é 100% sem aparecer, utilizando estratégias invisíveis e profissionais.</p>
     </div>
     <div class="faq-item">
       <h3>❓ Preciso investir em anúncios?</h3>
-      <p>Zero investimento! É tudo no orgânico, como os milionários do digital fazem escondido.</p>
+      <p>Zero tráfego pago! Tudo no orgânico, com estratégias que os grandes escondem.</p>
     </div>
     <div class="faq-item">
-      <h3>❓ Funciona pra quem tá começando?</h3>
-      <p>Sim! Você aprende do absoluto zero até faturar alto no digital, sem complicação.</p>
+      <h3>❓ Serve pra quem tá começando?</h3>
+      <p>Perfeito pra iniciantes! Você aprende do absoluto zero até faturar alto no digital.</p>
     </div>
   </div>
-</div>
+</section>
 
 <!-- WhatsApp -->
 <div class="whatsapp">
-  <a href="https://wa.me/5529991229786?text=Ol%C3%A1!%20Tenho%20interesse%20no%20E-book%20O%20Segredo.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank">💬</a>
+  <a href="https://wa.me/5542991229786?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20E-book%20O%20Segredo." target="_blank">💬</a>
 </div>
 
+<!-- Compradores -->
+<div class="buyers" id="buyers">Ana acabou de comprar</div>
+
 <script>
+// FAQ interativo
 const faqItems = document.querySelectorAll('.faq-item h3');
 faqItems.forEach(item => {
   item.addEventListener('click', () => {
@@ -277,6 +289,38 @@ faqItems.forEach(item => {
     p.style.display = p.style.display === 'block' ? 'none' : 'block';
   });
 });
+
+// Compradores aleatórios
+const buyers = [
+  'Ana acabou de comprar',
+  'Fernando garantiu o acesso',
+  'Beatriz realizou uma compra',
+  'Rafael entrou agora',
+  'Larissa acabou de comprar',
+  'Pedro garantiu o acesso',
+  'Mariana entrou na comunidade',
+  'Lucas acabou de comprar',
+  'Gabriel garantiu agora',
+  'Julia realizou uma compra'
+];
+const buyersDiv = document.getElementById('buyers');
+let index = 0;
+
+function showBuyers() {
+  buyersDiv.textContent = buyers[index];
+  buyersDiv.style.opacity = 0;
+  setTimeout(() => {
+    buyersDiv.style.transition = 'opacity 1s';
+    buyersDiv.style.opacity = 1;
+  }, 100);
+  index++;
+  if (index >= buyers.length) index = 0;
+}
+showBuyers();
+setInterval(() => {
+  buyersDiv.style.opacity = 0;
+  setTimeout(showBuyers, 1000);
+}, 4000);
 </script>
 
 </body>
