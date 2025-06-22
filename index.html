@@ -1,363 +1,277 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>O Segredo — Fature Pesado no Orgânico</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Segredo — Página Oficial</title>
 <style>
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
+/* Reset e fundo */
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #000, #001a1a);
+  color: white;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
 
-  body {
-    background: #000;
-    color: #fff;
-    overflow-x: hidden;
-  }
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
 
-  /* Container */
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 60px 20px 80px;
-    text-align: center;
-  }
+.hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #00ffaa, #00ffea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  /* Título */
-  h1.title {
-    font-size: 3.4rem;
-    color: #00ffaa;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #00ffaa;
-  }
+.hero p {
+  max-width: 700px;
+  margin: 20px auto;
+  color: #ccc;
+  font-size: 1.2rem;
+}
 
-  /* Descrição */
-  p.description {
-    font-size: 1.2rem;
-    max-width: 720px;
-    margin: 0 auto 30px;
-    color: #ccc;
-    line-height: 1.6;
-  }
+.cta-button {
+  background: #00ffaa;
+  color: #000;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 20px #00ffaa;
+  transition: 0.3s;
+}
 
-  /* Botão */
-  a.cta-button {
-    display: inline-block;
-    background: #00ffaa;
-    color: #000;
-    font-weight: 700;
-    padding: 16px 48px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 0 25px #00ffaa;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  a.cta-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 40px #00ffaa;
-  }
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00ffaa;
+}
 
-  /* Celular */
-  .phone-wrapper {
-    margin: 50px auto 70px;
-    perspective: 1200px;
-    width: 220px;
-    height: 480px;
-    position: relative;
-  }
-  .phone {
-    width: 100%;
-    height: 100%;
-    border-radius: 36px;
-    background: linear-gradient(145deg, #0a0a0a, #101010);
-    box-shadow: inset 0 0 20px #005544, 0 0 60px #00ffaa;
-    transform-style: preserve-3d;
-    animation: phone-spin 15s linear infinite;
-    position: relative;
-    overflow: hidden;
-  }
-  @keyframes phone-spin {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(360deg); }
-  }
-  .screen {
-    position: absolute;
-    top: 28px;
-    left: 14px;
-    right: 14px;
-    bottom: 28px;
-    background: #000;
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: inset 0 0 15px #003322;
-  }
+/* iPhone Animado */
+.iphone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-  /* Notificação */
-  .notification-fall {
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #000;
-    background: #00ffaa;
-    font-weight: 700;
-    padding: 10px 20px;
-    border-radius: 28px;
-    box-shadow: 0 0 12px #00ffaa;
-    animation: fall 5s linear;
-    user-select: none;
-  }
-  @keyframes fall {
-    0% { top: -40px; opacity: 1; }
-    90% { opacity: 1; }
-    100% { top: 440px; opacity: 0; }
-  }
+.iphone img {
+  width: 200px;
+  animation: spin 10s infinite linear;
+  z-index: 5;
+}
 
-  /* Informações do Ebook */
-  .ebook-info {
-    max-width: 720px;
-    margin: 0 auto 50px;
-    color: #ccc;
-    font-size: 1.15rem;
-    line-height: 1.5;
-  }
-  .ebook-info strong {
-    color: #00ffaa;
-  }
+@keyframes spin {
+  from {transform: rotateY(0);}
+  to {transform: rotateY(360deg);}
+}
 
-  /* Video Container */
-  .video-container {
-    max-width: 960px;
-    margin: 50px auto;
-  }
-  .video-container video {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 0 30px #00ffaa;
-  }
+/* Notificação no iPhone */
+.notification-on-phone {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #00ffaa;
+  color: #000;
+  padding: 8px 18px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #00ffaa;
+  animation: float 4s infinite;
+  z-index: 10;
+}
 
-  /* FAQ */
-  .faq-section {
-    max-width: 720px;
-    margin: 0 auto 80px;
-    text-align: left;
-  }
-  .faq-section h2 {
-    color: #00ffaa;
-    text-align: center;
-    margin-bottom: 35px;
-    font-weight: 700;
-    font-size: 2rem;
-  }
-  .faq-item {
-    background: #111;
-    border-radius: 12px;
-    padding: 16px 20px;
-    margin-bottom: 18px;
-    border: 1.5px solid #00ffaa;
-    cursor: pointer;
-    user-select: none;
-  }
-  .faq-item h3 {
-    font-weight: 600;
-    color: #00ffaa;
-    margin-bottom: 6px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .faq-item h3::after {
-    content: "+";
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-  }
-  .faq-item.active h3::after {
-    content: "-";
-    transform: rotate(180deg);
-  }
-  .faq-item p {
-    display: none;
-    color: #ccc;
-    font-size: 1rem;
-    line-height: 1.4;
-    margin-top: 8px;
-  }
-  .faq-item.active p {
-    display: block;
-  }
+@keyframes float {
+  0% {transform: translateY(-50%) translateX(-10px);}
+  50% {transform: translateY(-50%) translateX(10px);}
+  100% {transform: translateY(-50%) translateX(-10px);}
+}
 
-  /* Compradores */
-  .buyers {
-    position: fixed;
-    bottom: 22px;
-    left: 20px;
-    background: rgba(0,0,0,0.8);
-    padding: 10px 18px;
-    border-radius: 14px;
-    font-weight: 700;
-    color: #00ffaa;
-    box-shadow: 0 0 15px #00ffaa;
-    max-width: 260px;
-    font-size: 1rem;
-    z-index: 9999;
-    user-select: none;
-  }
+/* Video */
+.video-section {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
 
-  /* WhatsApp */
-  .whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-  }
-  .whatsapp a {
-    display: block;
-    background: #25D366;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 28px;
-    color: #fff;
-    box-shadow: 0 0 15px #25D366;
-    text-decoration: none;
-    user-select: none;
-    transition: transform 0.3s ease;
-  }
-  .whatsapp a:hover {
-    transform: scale(1.1);
-  }
+.video-section video {
+  width: 90%;
+  max-width: 700px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #00ffaa80;
+}
 
-  /* Responsivo */
-  @media (max-width: 600px) {
-    h1.title { font-size: 2.4rem; }
-    .phone-wrapper { width: 160px; height: 350px; }
-    .notification-fall { width: 140px; }
-    .buyers { max-width: 200px; font-size: 0.9rem; }
-  }
+/* Descrição abaixo do vídeo */
+.description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* FAQ */
+.faq-section {
+  background: #0a0a0a;
+  padding: 50px 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  color: #00ffaa;
+  margin-bottom: 30px;
+}
+
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #111;
+  border: 1px solid #00ffaa;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.faq-item h3 {
+  margin: 0;
+  cursor: pointer;
+  color: white;
+}
+
+.faq-item p {
+  display: none;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+/* WhatsApp */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.whatsapp a {
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 0 15px #25D366;
+}
+
+/* Nomes de pessoas */
+.names {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #00ffaa;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #00ffaa;
+  animation: fade 5s infinite;
+  z-index: 999;
+}
+
+@keyframes fade {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
 </style>
 </head>
 <body>
 
-<div class="container">
-  <h1 class="title">O Segredo — Fature Pesado no Orgânico</h1>
-
-  <p class="description">
-    Descubra 30 segredos ocultos que os grandes não querem que você saiba.<br />
-    Estratégia 100% orgânica, sem precisar investir em anúncios ou aparecer.<br />
-    Comece a faturar todos os dias com método testado e comprovado.
-  </p>
-
-  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button" target="_blank">
-    GARANTIR MEU ACESSO
-  </a>
-
-  <div class="phone-wrapper">
-    <div class="phone">
-      <div class="screen" id="notification-screen"></div>
-    </div>
-  </div>
-
-  <div class="ebook-info">
-    <strong>O que você vai aprender?</strong><br />
-    ✔️ Vender no orgânico sem aparecer.<br />
-    ✔️ Técnicas que os grandes escondem.<br />
-    ✔️ Vendas diárias no automático.<br />
-    ✔️ Construir sua máquina invisível de vendas.<br />
-    ✔️ E muito mais!
-  </div>
-
-  <!-- VÍDEO -->
-  <div class="video-container">
-    <video autoplay muted loop playsinline>
-      <source src="video.mp4" type="video/mp4">
-      Seu navegador não suporta vídeo.
-    </video>
-  </div>
-
-  <!-- FAQ -->
-  <section class="faq-section">
-    <h2>Perguntas Frequentes</h2>
-
-    <div class="faq-item" tabindex="0">
-      <h3>❓ Preciso aparecer?</h3>
-      <p>Não! O método é 100% sem aparecer, usando estratégias invisíveis e profissionais.</p>
-    </div>
-
-    <div class="faq-item" tabindex="0">
-      <h3>❓ Preciso investir em anúncios?</h3>
-      <p>Zero investimento! Tudo feito no orgânico, do jeito que os milionários escondem.</p>
-    </div>
-
-    <div class="faq-item" tabindex="0">
-      <h3>❓ Serve para iniciantes?</h3>
-      <p>Perfeito para quem está começando. Você aprende do zero até faturar alto.</p>
-    </div>
-  </section>
+<!-- Hero -->
+<div class="hero">
+  <h1>O SEGREDO</h1>
+  <p>O guia definitivo pra você faturar pesado no orgânico, sem aparecer e sem investir em anúncios!</p>
+  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">GARANTIR O ACESSO</a>
 </div>
 
-<!-- Compradores -->
-<div class="buyers" id="buyers">Ana acabou de comprar</div>
+<!-- iPhone + Notificação -->
+<div class="iphone">
+  <img src="https://i.postimg.cc/zf4g2Xk5/iphone.png" alt="iPhone">
+  <div class="notification-on-phone">💸 Venda aprovada — R$197</div>
+</div>
+
+<!-- Video -->
+<div class="video-section">
+  <video src="video.mp4" controls autoplay loop></video>
+</div>
+
+<!-- Descrição -->
+<div class="description">
+  <p>Dentro desse E-book estão os 30 segredos que os grandes players do mercado não querem que você descubra. Aprenda como gerar vendas todos os dias no orgânico, sem precisar aparecer, sem investir em tráfego pago, e construa uma verdadeira máquina de vendas.</p>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>Perguntas Frequentes</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <h3>❓ Preciso aparecer?</h3>
+      <p>Não! O método é 100% sem aparecer, usando estratégias profissionais.</p>
+    </div>
+    <div class="faq-item">
+      <h3>❓ Funciona mesmo pra quem tá começando?</h3>
+      <p>Sim! Foi feito exatamente pra quem tá começando do zero faturar no digital.</p>
+    </div>
+    <div class="faq-item">
+      <h3>❓ Preciso investir em anúncios?</h3>
+      <p>Zero investimento! É tudo no orgânico, validado e testado.</p>
+    </div>
+    <div class="faq-item">
+      <h3>❓ Como recebo o E-book?</h3>
+      <p>Assim que confirmar o pagamento, você recebe acesso imediato no seu e-mail.</p>
+    </div>
+    <div class="faq-item">
+      <h3>❓ Tem suporte?</h3>
+      <p>Sim, nosso suporte está disponível pra te ajudar no que precisar.</p>
+    </div>
+  </div>
+</div>
 
 <!-- WhatsApp -->
 <div class="whatsapp">
-  <a href="https://wa.me/5542991229786?text=Ol%C3%A1!%20Tenho%20interesse%20no%20E-book%20O%20Segredo.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank">💬</a>
+  <a href="https://wa.me/5542991229786?text=Ol%C3%A1!%20Tenho%20interesse%20no%20E-book%20O%20Segredo." target="_blank">💬</a>
 </div>
 
+<!-- Nomes de compradores -->
+<div class="names" id="names">Ana garantiu o acesso ✅</div>
+
 <script>
-  // FAQ
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('active');
-    });
-    item.addEventListener('keypress', e => {
-      if(e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        item.classList.toggle('active');
-      }
-    });
+// FAQ Interativo
+const faqItems = document.querySelectorAll('.faq-item h3');
+faqItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const p = item.nextElementSibling;
+    p.style.display = p.style.display === 'block' ? 'none' : 'block';
   });
+});
 
-  // Compradores
-  const buyersList = [
-    "Ana acabou de comprar",
-    "Fernando acabou de comprar",
-    "Bruna acabou de comprar",
-    "Lucas acabou de comprar",
-    "Mariana acabou de comprar",
-    "Rafael acabou de comprar",
-    "Juliana acabou de comprar",
-    "Carlos acabou de comprar",
-    "Fernanda acabou de comprar",
-    "Pedro acabou de comprar"
-  ];
-  let buyerIndex = 0;
-  const buyersDiv = document.getElementById('buyers');
-  function showBuyer() {
-    buyersDiv.textContent = buyersList[buyerIndex];
-    buyerIndex = (buyerIndex + 1) % buyersList.length;
-  }
-  showBuyer();
-  setInterval(showBuyer, 3500);
+// Nomes Aleatórios
+const names = ["Ana", "Lucas", "Julia", "Carlos", "Fernanda", "Gustavo", "Beatriz", "Matheus", "Larissa", "Renan", "Paula", "João"];
+const nameDiv = document.getElementById('names');
 
-  // Notificações no celular
-  const notifications = [
-    "💰 Venda aprovada - R$35,45",
-    "🎉 Nova venda realizada!",
-    "💸 Compra confirmada!",
-    "🔥 Vendas explodindo!",
-    "🚀 Cliente satisfeito!"
-  ];
-  const screen = document.getElementById('notification-screen');
-  function createNotification() {
-    const notif = document.createElement('div');
-    notif.classList.add('notification-fall');
-    notif.textContent = notifications[Math.floor(Math.random() * notifications.length)];
-    notif.style.left = "50%";
-    notif.style.transform = "translateX(-50%)";
-    screen.appendChild(notif);
-    notif.addEventListener('animationend', () => notif.remove());
-  }
-  setInterval(createNotification, 2300);
+function changeName() {
+  const randomName = names[Math.floor(Math.random() * names.length)];
+  nameDiv.innerText = `${randomName} garantiu o acesso ✅`;
+}
+
+setInterval(changeName, 5000);
 </script>
+
 </body>
 </html>
