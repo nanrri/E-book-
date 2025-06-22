@@ -3,274 +3,335 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Segredo — Página Oficial</title>
+<title>O SEGREDO - Fature Pesado no Orgânico</title>
 <style>
-/* Reset e fundo */
+/* === Configurações gerais === */
 body {
-  margin: 0;
-  background: linear-gradient(to bottom, #000, #001a1a);
-  color: white;
-  font-family: 'Arial', sans-serif;
-  overflow-x: hidden;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
 }
 
-/* Hero */
+/* === Fundo com animação sutil === */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 200%;
+    height: 200%;
+    background: repeating-radial-gradient(#00ffaa 2px, transparent 5px);
+    opacity: 0.05;
+    animation: moveStars 100s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveStars {
+    from {transform: translate(0, 0);}
+    to {transform: translate(-500px, 500px);}
+}
+
+/* === Hero Section === */
 .hero {
-  text-align: center;
-  padding: 50px 20px;
+    text-align: center;
+    padding: 60px 20px 30px 20px;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  background: linear-gradient(90deg, #00ffaa, #00ffea);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    color: #00ffaa;
+    font-size: 2.8rem;
+    text-shadow: 0 0 10px #00ffaa;
 }
 
 .hero p {
-  max-width: 700px;
-  margin: 20px auto;
-  color: #ccc;
-  font-size: 1.2rem;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #ccc;
+    font-size: 1.2rem;
 }
 
+/* === Botão === */
 .cta-button {
-  background: #00ffaa;
-  color: #000;
-  padding: 15px 35px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 0 20px #00ffaa;
-  transition: 0.3s;
+    background: #00ffaa;
+    color: #000;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 20px #00ffaa;
+    transition: 0.3s;
+    display: inline-block;
 }
 
 .cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px #00ffaa;
+    transform: scale(1.05);
+    box-shadow: 0 0 35px #00ffaa;
 }
 
-/* iPhone Animado */
-.iphone {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.iphone img {
-  width: 200px;
-  animation: spin 10s infinite linear;
-  z-index: 5;
+/* === Celular 3D Girando === */
+.phone {
+    margin: 40px auto;
+    width: 250px;
+    height: 500px;
+    background: #000;
+    border-radius: 40px;
+    border: 6px solid #00ffaa;
+    box-shadow: 0 0 40px #00ffaa;
+    animation: spin 10s infinite linear;
+    position: relative;
+    overflow: hidden;
 }
 
 @keyframes spin {
-  from {transform: rotateY(0);}
-  to {transform: rotateY(360deg);}
+    from {transform: rotateY(0);}
+    to {transform: rotateY(360deg);}
 }
 
-/* Notificação no iPhone */
-.notification-on-phone {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #00ffaa;
-  color: #000;
-  padding: 8px 18px;
-  border-radius: 30px;
-  box-shadow: 0 0 10px #00ffaa;
-  animation: float 4s infinite;
-  z-index: 10;
+/* Notificação dentro do celular */
+.notification {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00ffaa;
+    color: #000;
+    padding: 8px 18px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #00ffaa;
+    animation: float 4s infinite;
+    z-index: 2;
 }
 
 @keyframes float {
-  0% {transform: translateY(-50%) translateX(-10px);}
-  50% {transform: translateY(-50%) translateX(10px);}
-  100% {transform: translateY(-50%) translateX(-10px);}
+    0% {transform: translateX(-50%) translateY(0);}
+    50% {transform: translateX(-50%) translateY(10px);}
+    100% {transform: translateX(-50%) translateY(0);}
 }
 
-/* Video */
-.video-section {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0;
+/* === Video === */
+.video {
+    text-align: center;
 }
 
-.video-section video {
-  width: 90%;
-  max-width: 700px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px #00ffaa80;
+.video video {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #00ffaa;
+    margin: 30px 0;
 }
 
-/* Descrição abaixo do vídeo */
+/* === Descrição abaixo do vídeo === */
 .description {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 50px;
-  font-size: 1.2rem;
-  color: #ccc;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #ccc;
+    padding: 20px;
 }
 
-/* FAQ */
+.description h2 {
+    color: #00ffaa;
+    margin-bottom: 15px;
+}
+
+/* === O que você vai aprender === */
+.learn {
+    background: #111;
+    padding: 40px 20px;
+    border-top: 2px solid #00ffaa;
+}
+
+.learn h2 {
+    text-align: center;
+    color: #00ffaa;
+    margin-bottom: 20px;
+}
+
+.learn ul {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.learn li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.learn li::before {
+    content: '✔️';
+    position: absolute;
+    left: 0;
+}
+
+/* === FAQ === */
 .faq-section {
-  background: #0a0a0a;
-  padding: 50px 20px;
+    padding: 50px 20px;
 }
 
 .faq-section h2 {
-  text-align: center;
-  color: #00ffaa;
-  margin-bottom: 30px;
+    text-align: center;
+    color: #00ffaa;
+    margin-bottom: 30px;
 }
 
 .faq {
-  max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .faq-item {
-  background: #111;
-  border: 1px solid #00ffaa;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  padding: 15px;
+    background: #111;
+    border: 1px solid #00ffaa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 15px;
 }
 
 .faq-item h3 {
-  margin: 0;
-  cursor: pointer;
-  color: white;
+    margin: 0;
+    cursor: pointer;
 }
 
 .faq-item p {
-  display: none;
-  margin-top: 10px;
-  color: #ccc;
+    display: none;
+    margin-top: 10px;
 }
 
-/* WhatsApp */
+/* === Notificações de Nomes === */
+.floating-names {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #00ffaa;
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #00ffaa;
+    animation: nameFloat 6s ease-in-out infinite;
+    z-index: 999;
+}
+
+@keyframes nameFloat {
+    0% {opacity: 0; bottom: 0;}
+    10% {opacity: 1; bottom: 20px;}
+    90% {opacity: 1; bottom: 20px;}
+    100% {opacity: 0; bottom: 0;}
+}
+
+/* === WhatsApp === */
 .whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
 }
 
 .whatsapp a {
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  box-shadow: 0 0 15px #25D366;
-}
-
-/* Nomes de pessoas */
-.names {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #00ffaa;
-  color: black;
-  padding: 8px 16px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px #00ffaa;
-  animation: fade 5s infinite;
-  z-index: 999;
-}
-
-@keyframes fade {
-  0% {opacity: 0;}
-  10% {opacity: 1;}
-  90% {opacity: 1;}
-  100% {opacity: 0;}
+    background: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    box-shadow: 0 0 15px #25D366;
 }
 </style>
 </head>
 <body>
 
-<!-- Hero -->
+<!-- HERO -->
 <div class="hero">
-  <h1>O SEGREDO</h1>
-  <p>O guia definitivo pra você faturar pesado no orgânico, sem aparecer e sem investir em anúncios!</p>
-  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">GARANTIR O ACESSO</a>
+    <h1>O SEGREDO</h1>
+    <p>O guia definitivo pra você faturar pesado no orgânico, <strong>sem aparecer</strong> e <strong>sem investir em anúncios</strong>.<br> Descubra o método oculto que ninguém te contou.</p>
+    <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">GARANTIR O ACESSO</a>
 </div>
 
-<!-- iPhone + Notificação -->
-<div class="iphone">
-  <img src="https://i.postimg.cc/zf4g2Xk5/iphone.png" alt="iPhone">
-  <div class="notification-on-phone">💸 Venda aprovada — R$197</div>
+<!-- CELULAR GIRANDO COM NOTIFICAÇÃO -->
+<div class="phone">
+    <div class="notification">💸 Venda aprovada — R$197</div>
 </div>
 
-<!-- Video -->
-<div class="video-section">
-  <video src="video.mp4" controls autoplay loop></video>
+<!-- VÍDEO -->
+<div class="video">
+    <video src="video.mp4" controls autoplay muted></video>
 </div>
 
-<!-- Descrição -->
+<!-- DESCRIÇÃO ABAIXO DO VÍDEO -->
 <div class="description">
-  <p>Dentro desse E-book estão os 30 segredos que os grandes players do mercado não querem que você descubra. Aprenda como gerar vendas todos os dias no orgânico, sem precisar aparecer, sem investir em tráfego pago, e construa uma verdadeira máquina de vendas.</p>
+    <h2>🚀 Transforme sua vida agora!</h2>
+    <p>Você vai aprender a criar uma verdadeira máquina de vendas invisível. Fature pesado no orgânico, sem depender de anúncios, sem se expor e sem enrolação.</p>
+</div>
+
+<!-- O QUE VOCÊ VAI APRENDER -->
+<div class="learn">
+    <h2>O que você vai aprender?</h2>
+    <ul>
+        <li>Vender no orgânico sem aparecer.</li>
+        <li>Técnicas secretas que os grandes escondem.</li>
+        <li>Gerar vendas todos os dias no automático.</li>
+        <li>Construir sua máquina invisível de vendas.</li>
+        <li>Transformar seu perfil numa máquina de dinheiro.</li>
+        <li>E muito mais...</li>
+    </ul>
 </div>
 
 <!-- FAQ -->
 <div class="faq-section">
-  <h2>Perguntas Frequentes</h2>
-  <div class="faq">
-    <div class="faq-item">
-      <h3>❓ Preciso aparecer?</h3>
-      <p>Não! O método é 100% sem aparecer, usando estratégias profissionais.</p>
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq">
+        <div class="faq-item">
+            <h3>❓ Preciso aparecer?</h3>
+            <p>Não! O método é 100% sem aparecer, com estratégias ocultas.</p>
+        </div>
+        <div class="faq-item">
+            <h3>❓ Preciso investir?</h3>
+            <p>Zero investimento! É tudo no orgânico, igual os milionários escondem.</p>
+        </div>
+        <div class="faq-item">
+            <h3>❓ Funciona pra quem tá começando?</h3>
+            <p>Sim! Você começa do absoluto zero até faturar pesado no digital.</p>
+        </div>
+        <div class="faq-item">
+            <h3>❓ Por onde acesso o conteúdo?</h3>
+            <p>Você recebe acesso imediato ao ebook pela plataforma Kiwify.</p>
+        </div>
     </div>
-    <div class="faq-item">
-      <h3>❓ Funciona mesmo pra quem tá começando?</h3>
-      <p>Sim! Foi feito exatamente pra quem tá começando do zero faturar no digital.</p>
-    </div>
-    <div class="faq-item">
-      <h3>❓ Preciso investir em anúncios?</h3>
-      <p>Zero investimento! É tudo no orgânico, validado e testado.</p>
-    </div>
-    <div class="faq-item">
-      <h3>❓ Como recebo o E-book?</h3>
-      <p>Assim que confirmar o pagamento, você recebe acesso imediato no seu e-mail.</p>
-    </div>
-    <div class="faq-item">
-      <h3>❓ Tem suporte?</h3>
-      <p>Sim, nosso suporte está disponível pra te ajudar no que precisar.</p>
-    </div>
-  </div>
 </div>
 
-<!-- WhatsApp -->
+<!-- NOTIFICAÇÕES DE NOMES -->
+<div class="floating-names" id="nameNotification">Beatriz garantiu o acesso ✅</div>
+
+<!-- WHATSAPP -->
 <div class="whatsapp">
-  <a href="https://wa.me/5542991229786?text=Ol%C3%A1!%20Tenho%20interesse%20no%20E-book%20O%20Segredo." target="_blank">💬</a>
+    <a href="https://wa.me/5529991229786?text=Ol%C3%A1!%20Tenho%20interesse%20no%20E-book%20O%20Segredo.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank">💬</a>
 </div>
-
-<!-- Nomes de compradores -->
-<div class="names" id="names">Ana garantiu o acesso ✅</div>
 
 <script>
-// FAQ Interativo
+// FAQ abrir e fechar
 const faqItems = document.querySelectorAll('.faq-item h3');
 faqItems.forEach(item => {
-  item.addEventListener('click', () => {
-    const p = item.nextElementSibling;
-    p.style.display = p.style.display === 'block' ? 'none' : 'block';
-  });
+    item.addEventListener('click', () => {
+        const p = item.nextElementSibling;
+        p.style.display = p.style.display === 'block' ? 'none' : 'block';
+    });
 });
 
-// Nomes Aleatórios
-const names = ["Ana", "Lucas", "Julia", "Carlos", "Fernanda", "Gustavo", "Beatriz", "Matheus", "Larissa", "Renan", "Paula", "João"];
-const nameDiv = document.getElementById('names');
+// Nomes aleatórios nas notificações
+const names = ["Beatriz", "Lucas", "Ana", "Fernando", "Juliana", "Mateus", "Sofia", "Gabriel"];
+const nameNotification = document.getElementById('nameNotification');
 
-function changeName() {
-  const randomName = names[Math.floor(Math.random() * names.length)];
-  nameDiv.innerText = `${randomName} garantiu o acesso ✅`;
-}
-
-setInterval(changeName, 5000);
+setInterval(() => {
+    const randomName = names[Math.floor(Math.random() * names.length)];
+    nameNotification.innerText = `${randomName} garantiu o acesso ✅`;
+}, 6000);
 </script>
 
 </body>
