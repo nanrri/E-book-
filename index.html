@@ -1,207 +1,161 @@
-<!DOCTYPE html><html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>O Segredo - Fature Pesado no Orgânico</title>
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Segredo</title>
   <style>
     body {
       margin: 0;
-      background-color: #000;
+      font-family: Arial, sans-serif;
+      background: black;
       color: white;
-      font-family: 'Arial', sans-serif;
       text-align: center;
-    }
-    h1 {
-      color: #00ff99;
-      text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
-      margin-top: 30px;
-      font-size: 2em;
-    }
-    .subtitulo {
-      color: white;
-      margin: 10px 20px;
-      font-size: 1.1em;
-    }
-    .botao {
-      background-color: black;
-      color: white;
-      border: 2px solid #00ff99;
-      padding: 15px 30px;
-      border-radius: 50px;
-      font-size: 18px;
-      text-decoration: none;
-      display: inline-block;
-      margin: 20px 0;
-      box-shadow: 0 0 10px #00ff99;
-      transition: 0.3s;
-    }
-    .botao:hover {
-      background-color: #00ff99;
-      color: black;
-    }
-    .celular {
-      width: 200px;
-      height: 400px;
-      border: 6px solid #00ff99;
-      border-radius: 40px;
-      margin: 30px auto;
-      background-color: #000;
-      box-shadow: 0 0 30px #00ff99;
-      position: relative;
-      animation: girar 8s linear infinite;
-      transform-style: preserve-3d;
-      perspective: 1000px;
-    }
-    @keyframes girar {
-      0% { transform: rotateY(0deg);}
-      50% { transform: rotateY(180deg);}
-      100% { transform: rotateY(360deg);}
-    }
-    .notificacao {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #00ff99;
-      color: black;
-      padding: 8px 16px;
-      border-radius: 20px;
-      box-shadow: 0 0 10px #00ff99;
-      font-weight: bold;
-      animation: descer 6s infinite;
-    }
-    @keyframes descer {
-      0% { top: 0; opacity: 0; }
-      10% { top: 20px; opacity: 1; }
-      90% { top: 20px; opacity: 1; }
-      100% { top: 0; opacity: 0; }
-    }
-    .aprenda {
-      color: #00ff99;
-      margin-top: 40px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 20px;
-    }
-    ul li {
-      margin: 10px 0;
-      color: white;
-    }
-    ul li::before {
-      content: "✔️ ";
-      color: #00ff99;
-    }
-    video {
-      width: 90%;
-      max-width: 320px;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 0 0 20px #00ff99;
-      margin: 40px auto;
-      display: block;
-    }
-    .descricao {
-      color: white;
-      margin: 20px;
-      font-size: 1em;
-      animation: fadeIn 2s ease-in;
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    .faq {
-      margin: 40px 20px;
-      text-align: left;
-    }
-    .faq h3 {
-      color: #00ff99;
-    }
-    .faq p {
-      color: white;
-    }
-    .popup {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #00ff99;
-      color: black;
-      padding: 10px 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 10px #00ff99;
-      animation: aparecer 5s infinite;
-      font-weight: bold;
-    }
-    @keyframes aparecer {
-      0%, 100% { opacity: 0;}
-      10%, 90% { opacity: 1;}
-    }
-  </style>
-</head>
-<body>  <h1>O SEGREDO</h1>
-  <p class="subtitulo">
-    O guia definitivo pra você faturar pesado no orgânico,<br>
-    sem aparecer e sem investir em anúncios!
-  </p><a class="botao" href="https://pay.kiwify.com.br/1hpTVDK" target="_blank">GARANTIR O ACESSO</a>
+    }h1 {
+  font-size: 2rem;
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+}
 
-  <div class="celular">
-    <div class="notificacao" id="notificacao">📄 Venda aprovada — R$197</div>
+.cta-button {
+  background: #00ff88;
+  border: none;
+  border-radius: 20px;
+  padding: 15px 30px;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+  box-shadow: 0 0 20px #00ff88;
+  cursor: pointer;
+}
+
+.celular {
+  margin: 40px auto 20px auto;
+  width: 220px;
+  height: 450px;
+  border-radius: 30px;
+  background: black;
+  box-shadow: 0 0 30px #00ff88;
+  position: relative;
+}
+
+.notificacao {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00ff88;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 15px #00ff88;
+  animation: slideIn 2s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translate(-50%, -50px);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50px);
+    opacity: 0;
+  }
+}
+
+.aprender {
+  background: #111;
+  margin: 40px auto 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 80%;
+  box-shadow: 0 0 15px #00ff88;
+}
+
+.aprender h2 {
+  color: #00ff88;
+}
+
+.aprender ul {
+  list-style: none;
+  padding: 0;
+}
+
+.aprender li {
+  margin: 10px 0;
+  text-align: left;
+}
+
+video {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px #00ff88;
+}
+
+.descricao-org {
+  margin: 30px auto;
+  max-width: 90%;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.faq {
+  text-align: left;
+  margin: 40px auto;
+  max-width: 90%;
+}
+
+.faq h3 {
+  color: #00ff88;
+}
+
+.faq p {
+  margin-bottom: 20px;
+}
+
+.notificacao-bottom {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #00ff88;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  box-shadow: 0 0 15px #00ff88;
+}
+
+  </style>
+</head><body>
+  <h1>O SEGREDO</h1>
+  <p>O guia definitivo pra você faturar pesado no orgânico, sem aparecer e sem investir em anúncios!</p>
+  <button class="cta-button">GARANTIR O ACESSO</button>  <div class="celular">
+    <div class="notificacao">📩 Venda aprovada — R$197</div>
+  </div>  <div class="aprender">
+    <h2>📘 O que você vai aprender:</h2>
+    <ul>
+      <li>✔️ Vender todos os dias no automático</li>
+      <li>✔️ Aplicar táticas que os grandes escondem</li>
+      <li>✔️ Construir sua estrutura invisível de vendas</li>
+      <li>✔️ Criar consistência mesmo começando do zero</li>
+      <li>✔️ Lucrar alto sem aparecer, sem tráfego pago</li>
+    </ul>
   </div>  <video controls>
     <source src="video.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo.
-  </video>  <!-- BLOCO 1 - O QUE VAI APRENDER -->  <section style="background: #0d0d0d; padding: 30px 20px; margin-top: 40px;">
-    <h2 style="color: #00ff99; font-size: 1.5em;">📘 O que você vai aprender:</h2>
-    <ul>
-      <li>Vender todos os dias no automático</li>
-      <li>Aplicar táticas que os grandes escondem</li>
-      <li>Construir sua estrutura invisível de vendas</li>
-      <li>Criar consistência mesmo começando do zero</li>
-      <li>Lucrar alto sem aparecer, sem tráfego pago</li>
-    </ul>
-  </section>  <!-- BLOCO 2 - DESCRIÇÃO PERSUASIVA -->  <section style="background: #000; padding: 30px 20px;">
-    <h2 style="color: #00ff99;">💸 Descubra o Segredo</h2>
-    <p class="descricao">
-      Você não precisa aparecer, nem gastar com anúncios para começar a faturar online. Neste e-book, você vai aprender as mesmas estratégias que os maiores do mercado usam escondido — tudo no orgânico. É possível faturar R$2.000, R$5.000 ou até mais por mês usando apenas seu celular e um plano de ação certeiro. Tudo começa aqui.
-    </p>
-  </section>  <!-- BLOCO 3 - FAQ -->  <section style="background: #0d0d0d; padding: 40px 20px;">
-    <h2 style="color: #00ff99;">❓ Perguntas Frequentes</h2>
-    <div style="max-width: 700px; margin: auto; text-align: left;">
-      <div style="margin-bottom: 20px;">
-        <h3>Preciso aparecer?</h3>
-        <p>Não! O método é 100% no anonimato, usando apenas estratégias orgânicas.</p>
-      </div>
-      <div style="margin-bottom: 20px;">
-        <h3>Funciona pra iniciantes?</h3>
-        <p>Sim! O passo a passo foi feito pra quem está começando do absoluto zero.</p>
-      </div>
-      <div style="margin-bottom: 20px;">
-        <h3>Preciso investir em tráfego?</h3>
-        <p>Zero reais. Você vai aprender a gerar vendas todos os dias sem gastar nada.</p>
-      </div>
-      <div>
-        <h3>Quando começo a ver resultado?</h3>
-        <p>Alguns alunos já viram vendas nos primeiros 3 dias. Tudo depende da sua ação.</p>
-      </div>
-    </div>
-  </section>  <section style="background: #000; padding: 30px;">
-    <a href="https://pay.kiwify.com.br/1hpTVDK" class="botao">QUERO MEU ACESSO AGORA</a>
-  </section>  <div class="popup" id="popup">Juliana garantiu o acesso ✅</div>  <script>
-    const nomes = ["Beatriz", "Lucas", "Gabriel", "Maria", "Ana", "Rafael", "Juliana", "João", "Carlos", "Fernanda"];
-    const valores = [197, 147, 97, 297, 249];
-    const notificacao = document.getElementById("notificacao");
-    const popup = document.getElementById("popup");
-
-    function atualizarNotificacao() {
-      const nome = nomes[Math.floor(Math.random() * nomes.length)];
-      const valor = valores[Math.floor(Math.random() * valores.length)];
-      notificacao.textContent = `📄 Venda aprovada — R$${valor}`;
-      popup.textContent = `${nome} garantiu o acesso ✅`;
-    }
-
-    setInterval(atualizarNotificacao, 6000);
-  </script></body>
-</html>
+    Seu navegador não suporta o vídeo.
+  </video>  <div class="descricao-org">
+    <p>Você vai aprender exatamente como usar o tráfego orgânico para fazer vendas todos os dias, sem precisar investir em anúncios, sem depender de seguidores, e sem mostrar seu rosto.</p>
+    <p>Essa metodologia já ajudou centenas de iniciantes a faturar de verdade usando apenas o celular e estratégias que os grandes não contam.</p>
+  </div>  <div class="faq">
+    <h3>❓ Dúvidas Frequentes</h3>
+    <p><strong>Preciso aparecer?</strong> Não. Você pode aplicar tudo de forma anônima.</p>
+    <p><strong>Preciso investir em tráfego pago?</strong> Não. A estratégia é 100% orgânica.</p>
+    <p><strong>Funciona pra quem tá começando do zero?</strong> Sim! O método foi pensado pra iniciantes.</p>
+  </div>  <div class="notificacao-bottom">Carlos garantiu o acesso ✅</div>
+</body></html>
