@@ -1,161 +1,166 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html><html lang="pt-BR">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O Segredo</title>
+  <title>O Segredo - Página de Vendas</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: black;
-      color: white;
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(ellipse at bottom, #000 0%, #0a0a0a 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .hero {
       text-align: center;
-    }h1 {
-  font-size: 2rem;
-  color: #00ff88;
-  text-shadow: 0 0 10px #00ff88;
-}
-
-.cta-button {
-  background: #00ff88;
-  border: none;
-  border-radius: 20px;
-  padding: 15px 30px;
-  color: black;
-  font-weight: bold;
-  font-size: 1rem;
-  margin-top: 10px;
-  box-shadow: 0 0 20px #00ff88;
-  cursor: pointer;
-}
-
-.celular {
-  margin: 40px auto 20px auto;
-  width: 220px;
-  height: 450px;
-  border-radius: 30px;
-  background: black;
-  box-shadow: 0 0 30px #00ff88;
-  position: relative;
-}
-
-.notificacao {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #00ff88;
-  color: black;
-  padding: 10px 15px;
-  border-radius: 10px;
-  font-weight: bold;
-  box-shadow: 0 0 15px #00ff88;
-  animation: slideIn 2s ease-in-out infinite;
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translate(-50%, -50px);
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-50%, 0);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50px);
-    opacity: 0;
-  }
-}
-
-.aprender {
-  background: #111;
-  margin: 40px auto 20px auto;
-  padding: 20px;
-  border-radius: 15px;
-  max-width: 80%;
-  box-shadow: 0 0 15px #00ff88;
-}
-
-.aprender h2 {
-  color: #00ff88;
-}
-
-.aprender ul {
-  list-style: none;
-  padding: 0;
-}
-
-.aprender li {
-  margin: 10px 0;
-  text-align: left;
-}
-
-video {
-  width: 80%;
-  max-width: 500px;
-  border-radius: 15px;
-  margin-top: 20px;
-  box-shadow: 0 0 15px #00ff88;
-}
-
-.descricao-org {
-  margin: 30px auto;
-  max-width: 90%;
-  font-size: 1rem;
-  color: #ccc;
-}
-
-.faq {
-  text-align: left;
-  margin: 40px auto;
-  max-width: 90%;
-}
-
-.faq h3 {
-  color: #00ff88;
-}
-
-.faq p {
-  margin-bottom: 20px;
-}
-
-.notificacao-bottom {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #00ff88;
-  padding: 10px 15px;
-  border-radius: 10px;
-  color: black;
-  font-weight: bold;
-  box-shadow: 0 0 15px #00ff88;
-}
-
+      padding: 60px 20px 40px;
+      background: linear-gradient(to top, #000, #00ffaa22);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #00ffaa;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 20px auto;
+      color: #ddd;
+    }
+    .cta-button {
+      background: #00ffaa;
+      color: #000;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .discount-tag {
+      background: #ff0000;
+      color: #fff;
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 15px;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+    .not-interested {
+      background: transparent;
+      color: #00ffaa;
+      border: 2px solid #00ffaa;
+      padding: 10px 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+    .whatsapp a {
+      background: #25D366;
+      padding: 15px;
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      box-shadow: 0 0 15px #25D366;
+    }
+    .floating-sale {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid #00ffaa;
+      border-radius: 10px;
+      padding: 10px 15px;
+      color: #00ffaa;
+      font-size: 0.9rem;
+      animation: fadeInOut 5s infinite;
+    }
+    @keyframes fadeInOut {
+      0%, 100% {opacity: 0;}
+      10%, 90% {opacity: 1;}
+    }
   </style>
-</head><body>
-  <h1>O SEGREDO</h1>
-  <p>O guia definitivo pra você faturar pesado no orgânico, sem aparecer e sem investir em anúncios!</p>
-  <button class="cta-button">GARANTIR O ACESSO</button>  <div class="celular">
-    <div class="notificacao">📩 Venda aprovada — R$197</div>
-  </div>  <div class="aprender">
-    <h2>📘 O que você vai aprender:</h2>
-    <ul>
-      <li>✔️ Vender todos os dias no automático</li>
-      <li>✔️ Aplicar táticas que os grandes escondem</li>
-      <li>✔️ Construir sua estrutura invisível de vendas</li>
-      <li>✔️ Criar consistência mesmo começando do zero</li>
-      <li>✔️ Lucrar alto sem aparecer, sem tráfego pago</li>
-    </ul>
-  </div>  <video controls>
-    <source src="video.mp4" type="video/mp4">
-    Seu navegador não suporta o vídeo.
-  </video>  <div class="descricao-org">
-    <p>Você vai aprender exatamente como usar o tráfego orgânico para fazer vendas todos os dias, sem precisar investir em anúncios, sem depender de seguidores, e sem mostrar seu rosto.</p>
-    <p>Essa metodologia já ajudou centenas de iniciantes a faturar de verdade usando apenas o celular e estratégias que os grandes não contam.</p>
-  </div>  <div class="faq">
-    <h3>❓ Dúvidas Frequentes</h3>
-    <p><strong>Preciso aparecer?</strong> Não. Você pode aplicar tudo de forma anônima.</p>
-    <p><strong>Preciso investir em tráfego pago?</strong> Não. A estratégia é 100% orgânica.</p>
-    <p><strong>Funciona pra quem tá começando do zero?</strong> Sim! O método foi pensado pra iniciantes.</p>
-  </div>  <div class="notificacao-bottom">Carlos garantiu o acesso ✅</div>
-</body></html>
+</head>
+<body>
+  <div class="hero">
+    <h1>O Segredo Que Ninguém Conta</h1>
+    <p>Descubra como faturar todos os dias sem precisar aparecer e sem investir em anúncios!</p>
+    <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">QUERO AGORA</a><br>
+    <div class="discount-tag">DESCONTO RELÂMPAGO – De R$35,45 por R$9,90</div><br>
+    <button class="not-interested" onclick="window.open('popup.html','_blank')">Não estou interessado</button>
+  </div>  <div class="whatsapp">
+    <a href="https://wa.me/5529991229786" target="_blank">📱</a>
+  </div>  <div class="floating-sale" id="sale-notification">Venda aprovada - João comprou!</div>  <script>
+    const names = ["João", "Maria", "Carlos", "Ana", "Fernanda", "Lucas", "Patrícia", "Gabriel", "Juliana", "Ricardo"];
+    const sale = document.getElementById('sale-notification');
+    setInterval(() => {
+      const name = names[Math.floor(Math.random() * names.length)];
+      sale.textContent = `Venda aprovada - ${name} comprou!`;
+    }, 5000);
+  </script></body>
+</html><!-- popup.html --><!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oferta Relâmpago</title>
+  <style>
+    body {
+      background: radial-gradient(ellipse at bottom, #000 0%, #0a0a0a 100%);
+      color: #fff;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      padding: 40px 20px;
+    }
+    h1 {
+      color: #00ffaa;
+    }
+    p {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+    .cta-button {
+      background: #00ffaa;
+      color: #000;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .floating-sale {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid #00ffaa;
+      border-radius: 10px;
+      padding: 10px 15px;
+      color: #00ffaa;
+      font-size: 0.9rem;
+      animation: fadeInOut 5s infinite;
+    }
+    @keyframes fadeInOut {
+      0%, 100% {opacity: 0;}
+      10%, 90% {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <h1>⚡ Oferta Relâmpago ⚡</h1>
+  <p>Atenção! Essa é sua última chance de garantir esse desconto absurdo.<br> Pessoas estão comprando AGORA!</p>
+  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">QUERO AGORA</a>  <div class="floating-sale" id="sale-popup">Venda aprovada - Lucas comprou!</div>  <script>
+    const names = ["Lucas", "Amanda", "Bruno", "Larissa", "Felipe", "Mariana", "Thiago", "Beatriz", "Daniel", "Camila"];
+    const sale = document.getElementById('sale-popup');
+    setInterval(() => {
+      const name = names[Math.floor(Math.random() * names.length)];
+      sale.textContent = `Venda aprovada - ${name} comprou!`;
+    }, 5000);
+  </script></body>
+</html>
