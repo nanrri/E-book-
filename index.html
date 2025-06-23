@@ -1,180 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Segredo - Fature Pesado no Orgânico</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: #000;
-            color: white;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-        }
-        h1 {
-            color: #00ff99;
-            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
-            margin-top: 30px;
-        }
-        .subtitulo {
-            color: white;
-            margin: 10px 20px;
-            font-size: 1.1em;
-        }
-        .botao {
-            background-color: black;
-            color: white;
-            border: 2px solid #00ff99;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 18px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 20px 0;
-            box-shadow: 0 0 10px #00ff99;
-            transition: 0.3s;
-        }
-        .botao:hover {
-            background-color: #00ff99;
-            color: black;
-        }
-        .celular {
-            width: 200px;
-            height: 400px;
-            border: 6px solid #00ff99;
-            border-radius: 40px;
-            margin: 30px auto;
-            background-color: #000;
-            box-shadow: 0 0 30px #00ff99;
-            position: relative;
-            animation: girar 8s linear infinite;
-        }
-        @keyframes girar {
-            0% { transform: rotateY(0deg);}
-            50% { transform: rotateY(180deg);}
-            100% { transform: rotateY(360deg);}
-        }
-        .notificacao {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #00ff99;
-            color: black;
-            padding: 8px 16px;
-            border-radius: 20px;
-            box-shadow: 0 0 10px #00ff99;
-            font-weight: bold;
-        }
-        video {
-            width: 90%;
-            max-width: 400px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px #00ff99;
-            margin: 20px auto;
-            display: block;
-        }
-        .descricao {
-            color: white;
-            margin: 20px;
-            font-size: 1em;
-        }
-        .aprenda {
-            color: #00ff99;
-            margin-top: 30px;
-            font-weight: bold;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 20px;
-        }
-        ul li {
-            margin: 10px 0;
-            color: white;
-        }
-        ul li::before {
-            content: "✔️ ";
-            color: #00ff99;
-        }
-        .faq {
-            margin: 40px 20px;
-            text-align: left;
-        }
-        .faq h3 {
-            color: #00ff99;
-        }
-        .faq p {
-            color: white;
-        }
-        .popup {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: #00ff99;
-            color: black;
-            padding: 10px 20px;
-            border-radius: 20px;
-            box-shadow: 0 0 10px #00ff99;
-            animation: aparecer 5s infinite;
-        }
-        @keyframes aparecer {
-            0%, 100% { opacity: 0;}
-            10%, 90% { opacity: 1;}
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>O Segredo - Fature Pesado no Orgânico</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #00ff99;
+      text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+      margin-top: 30px;
+      font-size: 2em;
+    }
+    .subtitulo {
+      color: white;
+      margin: 10px 20px;
+      font-size: 1.1em;
+    }
+    .botao {
+      background-color: black;
+      color: white;
+      border: 2px solid #00ff99;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 18px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 20px 0;
+      box-shadow: 0 0 10px #00ff99;
+      transition: 0.3s;
+    }
+    .botao:hover {
+      background-color: #00ff99;
+      color: black;
+    }
+    .celular {
+      width: 200px;
+      height: 400px;
+      border: 6px solid #00ff99;
+      border-radius: 40px;
+      margin: 30px auto;
+      background-color: #000;
+      box-shadow: 0 0 30px #00ff99;
+      position: relative;
+      animation: girar 8s linear infinite;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+    @keyframes girar {
+      0% { transform: rotateY(0deg);}
+      50% { transform: rotateY(180deg);}
+      100% { transform: rotateY(360deg);}
+    }
+    .notificacao {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #00ff99;
+      color: black;
+      padding: 8px 16px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #00ff99;
+      font-weight: bold;
+      animation: descer 6s infinite;
+    }
+    @keyframes descer {
+      0% { top: 0; opacity: 0; }
+      10% { top: 20px; opacity: 1; }
+      90% { top: 20px; opacity: 1; }
+      100% { top: 0; opacity: 0; }
+    }
+
+    .aprenda {
+      color: #00ff99;
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 20px;
+    }
+    ul li {
+      margin: 10px 0;
+      color: white;
+    }
+    ul li::before {
+      content: "✔️ ";
+      color: #00ff99;
+    }
+
+    video {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00ff99;
+      margin: 30px auto;
+      display: block;
+    }
+
+    .descricao {
+      color: white;
+      margin: 20px;
+      font-size: 1em;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .faq {
+      margin: 40px 20px;
+      text-align: left;
+    }
+    .faq h3 {
+      color: #00ff99;
+    }
+    .faq p {
+      color: white;
+    }
+
+    .popup {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #00ff99;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #00ff99;
+      animation: aparecer 5s infinite;
+      font-weight: bold;
+    }
+    @keyframes aparecer {
+      0%, 100% { opacity: 0;}
+      10%, 90% { opacity: 1;}
+    }
+  </style>
 </head>
 <body>
 
-    <h1>O SEGREDO</h1>
-    <p class="subtitulo">O guia definitivo pra você faturar pesado no orgânico,<br> sem aparecer e sem investir em anúncios!</p>
+  <h1>O SEGREDO</h1>
+  <p class="subtitulo">
+    O guia definitivo pra você faturar pesado no orgânico,<br>
+    sem aparecer e sem investir em anúncios!
+  </p>
 
-    <a class="botao" href="https://pay.kiwify.com.br/1hpTVDK" target="_blank">GARANTIR O ACESSO</a>
+  <a class="botao" href="https://pay.kiwify.com.br/1hpTVDK" target="_blank">GARANTIR O ACESSO</a>
 
-    <div class="celular">
-        <div class="notificacao">📄 Venda aprovada — R$197</div>
-    </div>
+  <div class="celular">
+    <div class="notificacao" id="notificacao">📄 Venda aprovada — R$197</div>
+  </div>
 
-    <video controls>
-        <source src="video.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-    </video>
+  <p class="aprenda">O que você vai aprender?</p>
+  <ul>
+    <li>Vender no orgânico sem aparecer.</li>
+    <li>Técnicas que os grandes escondem.</li>
+    <li>Vendas diárias no automático.</li>
+    <li>Construir sua máquina invisível de vendas.</li>
+    <li>Multiplicar seus lucros rapidamente.</li>
+  </ul>
 
-    <div class="descricao">
-        🚀 Já imaginou faturar R$5.000, R$10.000 ou até mais todos os meses, sem precisar investir em anúncios, sem aparecer e trabalhando de onde quiser? Esse é o método que os grandes não querem que você descubra. Aqui você aprende como construir sua própria máquina invisível de vendas no automático!
-    </div>
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo.
+  </video>
 
-    <p class="aprenda">O que você vai aprender?</p>
-    <ul>
-        <li>Vender no orgânico sem aparecer.</li>
-        <li>Técnicas que os grandes escondem.</li>
-        <li>Vendas diárias no automático.</li>
-        <li>Construir sua máquina invisível de vendas.</li>
-        <li>Multiplicar seus lucros rapidamente.</li>
-    </ul>
+  <div class="descricao">
+    💸 Dentro do seu celular, pode existir um negócio invisível. E o melhor? Sem aparecer, sem depender de tráfego pago, apenas usando estratégias que funcionam 100% no orgânico. Se você aplicar, pode fazer R$2.000, R$5.000 ou até mais por mês com consistência e inteligência. Esse é o segredo que os grandes tentam esconder.
+  </div>
 
-    <div class="faq">
-        <h3>❓ Perguntas Frequentes</h3>
-        <p><b>Preciso aparecer?</b> Não! Tudo 100% no orgânico e no anonimato.</p>
-        <p><b>Funciona pra quem é iniciante?</b> Sim! Método criado pra quem tá começando do zero.</p>
-        <p><b>Preciso investir em anúncios?</b> Zero investimento em anúncios. Tudo 100% orgânico!</p>
-        <p><b>Quando começo a ganhar dinheiro?</b> Você já aplica e vê resultados nos primeiros dias!</p>
-    </div>
+  <div class="faq">
+    <h3>❓ Perguntas Frequentes</h3>
+    <p><b>Preciso aparecer?</b> Não! Tudo 100% no orgânico e no anonimato.</p>
+    <p><b>Funciona pra quem é iniciante?</b> Sim! Método criado pra quem tá começando do zero.</p>
+    <p><b>Preciso investir em anúncios?</b> Zero investimento em anúncios. Tudo 100% orgânico!</p>
+    <p><b>Quando começo a ganhar dinheiro?</b> Você já aplica e vê resultados nos primeiros dias!</p>
+  </div>
 
-    <div class="popup" id="popup">Juliana garantiu o acesso ✅</div>
+  <div class="popup" id="popup">Juliana garantiu o acesso ✅</div>
 
-    <script>
-        const nomes = ["Beatriz", "Lucas", "Gabriel", "Maria", "Ana", "Rafael", "Juliana", "João", "Carlos", "Fernanda"];
-        const popup = document.getElementById('popup');
+  <script>
+    const nomes = ["Beatriz", "Lucas", "Gabriel", "Maria", "Ana", "Rafael", "Juliana", "João", "Carlos", "Fernanda"];
+    const valores = [197, 147, 97, 297, 249];
+    const notificacao = document.getElementById("notificacao");
+    const popup = document.getElementById("popup");
 
-        function gerarNotificacao() {
-            const nome = nomes[Math.floor(Math.random() * nomes.length)];
-            popup.textContent = `${nome} garantiu o acesso ✅`;
-        }
+    function atualizarNotificacao() {
+      const nome = nomes[Math.floor(Math.random() * nomes.length)];
+      const valor = valores[Math.floor(Math.random() * valores.length)];
+      notificacao.textContent = `📄 Venda aprovada — R$${valor}`;
+      popup.textContent = `${nome} garantiu o acesso ✅`;
+    }
 
-        setInterval(gerarNotificacao, 5000);
-    </script>
+    setInterval(atualizarNotificacao, 6000);
+  </script>
 
 </body>
 </html>
