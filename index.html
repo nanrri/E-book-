@@ -1,128 +1,213 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>O Segredo para Ganhar no Orgânico</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Segredo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #000;
+      background: #000;
       color: #fff;
+      overflow-x: hidden;
     }
-    .container {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
+
     h1 {
-      font-size: 2rem;
       color: #00ff99;
-      margin-bottom: 10px;
-      background-color: #001f1a;
-      padding: 10px;
-      border-radius: 12px;
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 40px;
     }
-    p {
+
+    .sub {
+      text-align: center;
       font-size: 1rem;
       color: #ccc;
+      padding: 0 20px;
+      margin-top: 10px;
     }
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 20px 0;
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .cta button {
+      background: #00ff99;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
       font-size: 1rem;
       font-weight: bold;
-      color: #000;
-      background-color: #00ff99;
-      border: none;
-      border-radius: 25px;
       cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 0 10px #00ff99;
+      box-shadow: 0 0 15px #00ff99;
+      transition: all 0.3s ease;
     }
+
+    .cta button:hover {
+      background: #00cc77;
+    }
+
+    .notificacao {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #00ff99;
+      color: black;
+      padding: 8px 16px;
+      border-radius: 30px;
+      box-shadow: 0 0 20px #00ff99;
+      font-size: 0.9rem;
+      animation: cair 6s infinite;
+      z-index: 9999;
+    }
+
+    @keyframes cair {
+      0% { top: -50px; opacity: 0; }
+      10% { opacity: 1; }
+      50% { top: 200px; }
+      100% { top: 200px; opacity: 0; }
+    }
+
+    .celular {
+      width: 180px;
+      height: 360px;
+      margin: 40px auto 0;
+      border-radius: 40px;
+      border: 6px solid #00ff99;
+      box-shadow: 0 0 30px #00ff99;
+      background: black;
+      position: relative;
+    }
+
+    .aprendizado {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    .aprendizado h2 {
+      color: #00ff99;
+      margin-bottom: 10px;
+    }
+
+    .aprendizado ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .aprendizado ul li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
     .video-container {
       display: flex;
       justify-content: center;
-      margin: 30px 0;
+      margin: 0 auto 30px;
     }
+
     video {
-      width: 90%;
-      max-width: 400px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px #00ff99;
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00ff99;
     }
-    .faq {
-      padding: 30px 20px;
-      max-width: 800px;
-      margin: auto;
+
+    .botao-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      border-radius: 50%;
+      padding: 12px;
+      box-shadow: 0 0 10px #25d366;
     }
-    .faq h2 {
-      text-align: center;
-      color: #00ff99;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
+
+    .nomes {
+      position: fixed;
+      bottom: 20px;
+      left: 10px;
+      background: #00ff99;
+      padding: 10px 18px;
+      border-radius: 30px;
+      color: black;
+      font-size: 0.9rem;
+      font-weight: bold;
+      animation: piscar 2s infinite;
     }
-    .faq-item {
-      border: 2px solid #00ff99;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      padding: 15px;
-      background: #111;
-    }
-    .faq-item strong {
-      color: #00ff99;
-      display: block;
-    }
-    .faq-item p {
-      color: #ccc;
-      margin-top: 8px;
+
+    @keyframes piscar {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🚀 O Segredo Para Ganhar no Orgânico</h1>
-    <p>Aprenda a gerar vendas no orgânico, faturando alto sem precisar aparecer e sem investir em anúncios.</p>
-    <a href="https://pay.kiwify.com.br/1hpTVDK" class="btn">GARANTIR AGORA</a><h2 style="color: #00ff99;">📘 O que você vai aprender no E-book?</h2>
-<ul style="text-align: left; max-width: 600px; margin: 0 auto; list-style: none; padding: 0;">
-  <li style="margin-bottom: 10px;">✅ Como vender no orgânico sem aparecer.</li>
-  <li style="margin-bottom: 10px;">✅ Gerar vendas todos os dias sem investir.</li>
-  <li style="margin-bottom: 10px;">✅ Técnicas secretas que ninguém te conta.</li>
-  <li style="margin-bottom: 10px;">✅ Criar sua estrutura que vende no automático.</li>
-</ul>
 
-<div class="video-container">
-  <video controls>
-    <source src="video.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo.
-  </video>
-</div>
+  <div class="notificacao">
+    💰 Venda Aprovada — R$197
+  </div>
 
-<a href="https://pay.kiwify.com.br/1hpTVDK" class="btn">GARANTIR AGORA</a>
+  <h1>🚀 O Segredo Para Ganhar no Orgânico</h1>
+  <p class="sub">Descubra os segredos ocultos que os grandes não querem te contar. Método validado, 100% sem investir em tráfego pago!</p>
 
-  </div>  <section class="faq">
-    <h2>❓ Perguntas Frequentes</h2><div class="faq-item">
-  <strong>Preciso aparecer?</strong>
-  <p>Não. O método é 100% invisível. Você vende todos os dias sem mostrar seu rosto.</p>
-</div>
+  <div class="cta">
+    <a href="https://pay.kiwify.com.br/1hpTVDK"><button>GARANTIR AGORA</button></a>
+  </div>
 
-<div class="faq-item">
-  <strong>Preciso investir em tráfego pago?</strong>
-  <p>Zero reais! Todas as estratégias são orgânicas, usando apenas o que você já tem.</p>
-</div>
+  <div class="celular"></div>
 
-<div class="faq-item">
-  <strong>Funciona mesmo sem experiência?</strong>
-  <p>Sim. O passo a passo é direto ao ponto e pensado pra iniciantes.</p>
-</div>
+  <section class="aprendizado">
+    <h2>📘 O que você vai aprender no E-book?</h2>
+    <ul>
+      <li>✔️ Como vender no orgânico sem aparecer.</li>
+      <li>✔️ Gerar vendas todos os dias sem investir.</li>
+      <li>✔️ Técnicas secretas que ninguém te conta.</li>
+      <li>✔️ Criar sua estrutura que vende no automático.</li>
+    </ul>
+  </section>
 
-<div class="faq-item">
-  <strong>Quanto posso faturar com isso?</strong>
-  <p>Você pode faturar de R$1.000 a R$10.000 por mês ou mais, conforme sua dedicação.</p>
-</div>
+  <div class="video-container">
+    <video controls autoplay muted>
+      <source src="video.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+  </div>
 
-  </section></body>
+  <div class="cta">
+    <a href="https://pay.kiwify.com.br/1hpTVDK"><button>GARANTIR AGORA</button></a>
+  </div>
+
+  <div class="botao-whatsapp">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384088.png" width="24" height="24" alt="WhatsApp">
+  </div>
+
+  <div class="nomes" id="nome-aleatorio">
+    Carlos garantiu o acesso ✅
+  </div>
+
+  <script>
+    const nomes = [
+      'Carlos garantiu o acesso ✅',
+      'Juliana garantiu o acesso ✅',
+      'Pedro garantiu o acesso ✅',
+      'Bianca garantiu o acesso ✅',
+      'Rafael garantiu o acesso ✅',
+      'Amanda garantiu o acesso ✅',
+      'Lucas garantiu o acesso ✅',
+      'Fernanda garantiu o acesso ✅',
+      'Eduardo garantiu o acesso ✅',
+      'Letícia garantiu o acesso ✅'
+    ];
+
+    setInterval(() => {
+      const nome = nomes[Math.floor(Math.random() * nomes.length)];
+      document.getElementById('nome-aleatorio').textContent = nome;
+    }, 4000);
+  </script>
+
+</body>
 </html>
