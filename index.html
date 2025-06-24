@@ -1,146 +1,283 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haype Connect | Fornecedores Premium</title>
-  <style>
-    body {
-      background-color: #000;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-    }
-    header {
-      text-align: center;
-      padding: 30px 20px;
-    }
-    header h1 {
-      color: #00ff55;
-      font-size: 2em;
-    }
-    header p {
-      color: #ccc;
-      font-size: 1.1em;
-    }
-    .live-count {
-      background-color: #111;
-      color: #00ff55;
-      text-align: center;
-      padding: 8px;
-      font-weight: bold;
-    }
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 20px;
-      scroll-snap-type: x mandatory;
-    }
-    .item {
-      background: #111;
-      border-radius: 16px;
-      padding: 20px;
-      min-width: 280px;
-      max-width: 320px;
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,255,85,0.3);
-    }
-    .item img {
-      width: 90%;
-      border-radius: 12px;
-      background: transparent;
-      animation: float 3s ease-in-out infinite;
-      filter: drop-shadow(0 8px 8px rgba(0, 255, 85, 0.2));
-    }
-    .item h3 {
-      color: #00ff55;
-      margin-top: 12px;
-    }
-    .item p {
-      color: #ccc;
-      font-size: 0.95em;
-    }
-    .cta-button {
-      display: inline-block;
-      background-color: #00ff55;
-      color: black;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    .floating-whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #00ff55;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 15px rgba(0,255,85,0.4);
-      z-index: 999;
-    }
-    .floating-whatsapp img {
-      width: 30px;
-      height: 30px;
-    }
-    .info-section {
-      padding: 30px 20px;
-      text-align: center;
-    }
-    .info-section h2 {
-      color: #00ff55;
-    }
-    .info-section p {
-      color: #ccc;
-      max-width: 800px;
-      margin: auto;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Segredo - E-book Revelador</title>
+<style>
+/* Fundo Galáxia Animada */
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  background: radial-gradient(ellipse at center, #000 0%, #020202 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: repeating-radial-gradient(#00ffaa 2px, transparent 5px);
+  animation: moveStars 50s linear infinite;
+  z-index: -1;
+  opacity: 0.08;
+}
+
+@keyframes moveStars {
+  0% {transform: translate(0, 0);}
+  100% {transform: translate(-500px, 500px);}
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #000, #00ffaa12);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #00ffaa;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.cta-button {
+  background: #00ffaa;
+  color: #000;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  box-shadow: 0 0 20px #00ffaa;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px #00ffaa;
+}
+
+/* iPhone Girando */
+.iphone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  position: relative;
+}
+
+.iphone img {
+  width: 180px;
+  animation: spin 10s infinite linear;
+}
+
+@keyframes spin {
+  from {transform: rotateY(0);}
+  to {transform: rotateY(360deg);}
+}
+
+/* Notificação flutuante */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00ffaa;
+  color: #000;
+  padding: 8px 18px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #00ffaa;
+  animation: float 4s infinite;
+  z-index: 999;
+}
+
+@keyframes float {
+  0% {transform: translateX(-50%) translateY(0);}
+  50% {transform: translateX(-50%) translateY(20px);}
+  100% {transform: translateX(-50%) translateY(0);}
+}
+
+/* Notificações Caindo */
+.falling-notifications {
+  position: fixed;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 998;
+}
+
+.falling-notifications div {
+  position: absolute;
+  top: 0;
+  background: #00ffaa;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #00ffaa;
+  animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(120vh);}
+}
+
+/* Ebook Showcase */
+.ebook-showcase {
+  background: #121212;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.ebook-showcase h2 {
+  color: #00ffaa;
+  margin-bottom: 20px;
+}
+
+.ebook-showcase p {
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* FAQ */
+.faq-section {
+  background: #121212;
+  padding: 50px 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  color: #00ffaa;
+  margin-bottom: 30px;
+}
+
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #111;
+  border: 1px solid #00ffaa;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.faq-item h3 {
+  margin: 0;
+  cursor: pointer;
+}
+
+.faq-item p {
+  display: none;
+  margin-top: 10px;
+}
+
+/* WhatsApp */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.whatsapp a {
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 0 15px #25D366;
+}
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>QUALIDADE DE VERDADE SÓ TEM AQUI</h1>
-    <p>Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>
-  </header>
+<!-- Notificação Fixa -->
+<div class="notification">
+  💸 Venda Aprovada - R$197,00
+</div>
 
-  <div class="live-count">⚡ 35 pessoas estão acessando agora</div>
+<!-- Notificações Caindo -->
+<div class="falling-notifications">
+  <div style="left:10%;">💰 Venda - R$197</div>
+  <div style="left:30%; animation-delay: 2s;">💰 Venda - R$197</div>
+  <div style="left:50%; animation-delay: 4s;">💰 Venda - R$197</div>
+  <div style="left:70%; animation-delay: 3s;">💰 Venda - R$197</div>
+</div>
 
-  <div class="carousel">
-    <div class="item">
-      <img src="tns.jpg" alt="Tênis Air Max Plus">
-      <h3>Tênis Air Max Plus</h3>
-      <p>Estilo urbano, confortável, com amortecimento Air Max, material premium. A escolha certa pra quem vive o street.</p>
-      <a class="cta-button" href="#">GARANTIR AGORA</a>
+<!-- Hero -->
+<div class="hero">
+  <h1>🚀 O Segredo Para Ganhar no Orgânico</h1>
+  <p>Descubra os segredos ocultos que os grandes não querem te contar. Método validado, 100% sem investir em tráfego pago!</p>
+  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">QUERO MEU ACESSO</a>
+</div>
+
+<!-- iPhone -->
+<div class="iphone">
+  <img src="https://i.postimg.cc/zf4g2Xk5/iphone.png" alt="iPhone">
+</div>
+
+<!-- Ebook Showcase -->
+<div class="ebook-showcase">
+  <h2>O que você vai aprender no E-book?</h2>
+  <p>✔️ Como vender no orgânico sem aparecer.<br>
+     ✔️ Gerar vendas todos os dias sem investir.<br>
+     ✔️ Técnicas secretas que ninguém te conta.<br>
+     ✔️ Criar sua estrutura que vende no automático.<br>
+     ✔️ E muito mais…</p>
+  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">ACESSAR AGORA</a>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>Perguntas Frequentes</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <h3>❓ Preciso aparecer?</h3>
+      <p>Não! O método é 100% sem aparecer, usando estratégias ocultas e profissionais.</p>
     </div>
-    <div class="item">
-      <img src="roupa2.jpg" alt="Moletom Premium">
-      <h3>Moletom Premium</h3>
-      <p>Conjunto Oversized Floral — tecido de qualidade, caimento perfeito e estilo único. Pra quem anda no hype de verdade.</p>
-      <a class="cta-button" href="#">GARANTIR AGORA</a>
+    <div class="faq-item">
+      <h3>❓ Preciso investir em anúncios?</h3>
+      <p>Zero investimento! É tudo no orgânico, como os milionários do digital fazem escondido.</p>
+    </div>
+    <div class="faq-item">
+      <h3>❓ Funciona pra quem tá começando?</h3>
+      <p>Sim! Você aprende do absoluto zero até faturar alto no digital, sem complicação.</p>
     </div>
   </div>
+</div>
 
-  <div class="info-section">
-    <h2>Sobre a Haype Connect</h2>
-    <p>Conectamos você aos melhores fornecedores do mercado. Aqui é fornecedor real, sem enrolação. Produtos de altíssima qualidade, com entrega rápida e suporte total. Faça parte do hype agora mesmo.</p>
-  </div>
+<!-- WhatsApp -->
+<div class="whatsapp">
+  <a href="https://wa.me/5529991229786?text=Ol%C3%A1!%20Tenho%20interesse%20no%20E-book%20O%20Segredo.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank">💬</a>
+</div>
 
-  <a class="floating-whatsapp" href="https://wa.me/5542991229786" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
-  </a>
+<script>
+const faqItems = document.querySelectorAll('.faq-item h3');
+faqItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const p = item.nextElementSibling;
+    p.style.display = p.style.display === 'block' ? 'none' : 'block';
+  });
+});
+</script>
 
 </body>
 </html>
