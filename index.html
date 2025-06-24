@@ -1,283 +1,158 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Segredo - E-book Revelador</title>
-<style>
-/* Fundo Galáxia Animada */
-body {
-  margin: 0;
-  overflow-x: hidden;
-  background: #000;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-  background: radial-gradient(ellipse at center, #000 0%, #020202 100%);
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  width: 200%;
-  height: 200%;
-  background: repeating-radial-gradient(#00ffaa 2px, transparent 5px);
-  animation: moveStars 50s linear infinite;
-  z-index: -1;
-  opacity: 0.08;
-}
-
-@keyframes moveStars {
-  0% {transform: translate(0, 0);}
-  100% {transform: translate(-500px, 500px);}
-}
-
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(to bottom, #000, #00ffaa12);
-}
-
-.hero h1 {
-  font-size: 3rem;
-  color: #00ffaa;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #ccc;
-  max-width: 700px;
-  margin: 20px auto;
-}
-
-.cta-button {
-  background: #00ffaa;
-  color: #000;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-decoration: none;
-  box-shadow: 0 0 20px #00ffaa;
-}
-
-.cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px #00ffaa;
-}
-
-/* iPhone Girando */
-.iphone {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0;
-  position: relative;
-}
-
-.iphone img {
-  width: 180px;
-  animation: spin 10s infinite linear;
-}
-
-@keyframes spin {
-  from {transform: rotateY(0);}
-  to {transform: rotateY(360deg);}
-}
-
-/* Notificação flutuante */
-.notification {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #00ffaa;
-  color: #000;
-  padding: 8px 18px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px #00ffaa;
-  animation: float 4s infinite;
-  z-index: 999;
-}
-
-@keyframes float {
-  0% {transform: translateX(-50%) translateY(0);}
-  50% {transform: translateX(-50%) translateY(20px);}
-  100% {transform: translateX(-50%) translateY(0);}
-}
-
-/* Notificações Caindo */
-.falling-notifications {
-  position: fixed;
-  top: -50px;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
-  z-index: 998;
-}
-
-.falling-notifications div {
-  position: absolute;
-  top: 0;
-  background: #00ffaa;
-  color: #000;
-  padding: 5px 10px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px #00ffaa;
-  animation: fall 6s linear infinite;
-}
-
-@keyframes fall {
-  0% {transform: translateY(0);}
-  100% {transform: translateY(120vh);}
-}
-
-/* Ebook Showcase */
-.ebook-showcase {
-  background: #121212;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.ebook-showcase h2 {
-  color: #00ffaa;
-  margin-bottom: 20px;
-}
-
-.ebook-showcase p {
-  color: #ccc;
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-}
-
-/* FAQ */
-.faq-section {
-  background: #121212;
-  padding: 50px 20px;
-}
-
-.faq-section h2 {
-  text-align: center;
-  color: #00ffaa;
-  margin-bottom: 30px;
-}
-
-.faq {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  background: #111;
-  border: 1px solid #00ffaa;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  padding: 15px;
-}
-
-.faq-item h3 {
-  margin: 0;
-  cursor: pointer;
-}
-
-.faq-item p {
-  display: none;
-  margin-top: 10px;
-}
-
-/* WhatsApp */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-}
-
-.whatsapp a {
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  box-shadow: 0 0 15px #25D366;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Segredo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    .title {
+      font-size: 28px;
+      color: #00ff99;
+      text-shadow: 0 0 10px #00ff99;
+    }
+    .description {
+      font-size: 16px;
+      color: #ccc;
+      margin-top: 10px;
+    }
+    .button {
+      background: #00ff99;
+      color: #000;
+      padding: 15px 25px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin: 20px auto;
+      border-radius: 30px;
+      box-shadow: 0 0 20px #00ff99;
+    }
+    .cell-container {
+      display: flex;
+      justify-content: center;
+      margin: 30px auto;
+      position: relative;
+    }
+    .cell {
+      width: 220px;
+      height: 440px;
+      border-radius: 40px;
+      background: #000;
+      box-shadow: 0 0 25px #00ff99;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .notification {
+      position: absolute;
+      top: -60px;
+      background: #00ff99;
+      color: #000;
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #00ff99;
+      animation: drop 4s infinite;
+    }
+    @keyframes drop {
+      0% {top: -60px; opacity: 0;}
+      50% {top: 60px; opacity: 1;}
+      100% {top: 60px; opacity: 0;}
+    }
+    .section {
+      padding: 20px;
+      text-align: center;
+    }
+    .section h2 {
+      color: #00ff99;
+    }
+    .video {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    video {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #00ff99;
+    }
+    .whatsapp, .names {
+      position: fixed;
+      bottom: 10px;
+      padding: 10px;
+      background: #00ff99;
+      color: #000;
+      font-weight: bold;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #00ff99;
+    }
+    .whatsapp {
+      right: 10px;
+    }
+    .names {
+      left: 10px;
+      animation: fadein 5s infinite;
+    }
+    @keyframes fadein {
+      0% { opacity: 0; }
+      25% { opacity: 1; }
+      75% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .faq {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .faq h3 {
+      color: #00ff99;
+      border-bottom: 1px solid #00ff99;
+      padding-bottom: 10px;
+    }
+    .faq p {
+      margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
-
-<!-- Notificação Fixa -->
-<div class="notification">
-  💸 Venda Aprovada - R$197,00
-</div>
-
-<!-- Notificações Caindo -->
-<div class="falling-notifications">
-  <div style="left:10%;">💰 Venda - R$197</div>
-  <div style="left:30%; animation-delay: 2s;">💰 Venda - R$197</div>
-  <div style="left:50%; animation-delay: 4s;">💰 Venda - R$197</div>
-  <div style="left:70%; animation-delay: 3s;">💰 Venda - R$197</div>
-</div>
-
-<!-- Hero -->
-<div class="hero">
-  <h1>🚀 O Segredo Para Ganhar no Orgânico</h1>
-  <p>Descubra os segredos ocultos que os grandes não querem te contar. Método validado, 100% sem investir em tráfego pago!</p>
-  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">QUERO MEU ACESSO</a>
-</div>
-
-<!-- iPhone -->
-<div class="iphone">
-  <img src="https://i.postimg.cc/zf4g2Xk5/iphone.png" alt="iPhone">
-</div>
-
-<!-- Ebook Showcase -->
-<div class="ebook-showcase">
-  <h2>O que você vai aprender no E-book?</h2>
-  <p>✔️ Como vender no orgânico sem aparecer.<br>
-     ✔️ Gerar vendas todos os dias sem investir.<br>
-     ✔️ Técnicas secretas que ninguém te conta.<br>
-     ✔️ Criar sua estrutura que vende no automático.<br>
-     ✔️ E muito mais…</p>
-  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">ACESSAR AGORA</a>
-</div>
-
-<!-- FAQ -->
-<div class="faq-section">
-  <h2>Perguntas Frequentes</h2>
-  <div class="faq">
-    <div class="faq-item">
-      <h3>❓ Preciso aparecer?</h3>
-      <p>Não! O método é 100% sem aparecer, usando estratégias ocultas e profissionais.</p>
+  <header>
+    <h1 class="title">🚀 O Segredo Para Ganhar no Orgânico</h1>
+    <div class="description">
+      Descubra os segredos ocultos que os grandes não querem te contar.<br>
+      Método validado, 100% sem investir em tráfego pago!
     </div>
-    <div class="faq-item">
-      <h3>❓ Preciso investir em anúncios?</h3>
-      <p>Zero investimento! É tudo no orgânico, como os milionários do digital fazem escondido.</p>
+    <a href="https://pay.kiwify.com.br/1hpTVDK" class="button">QUERO MEU ACESSO</a>
+  </header>  <div class="cell-container">
+    <div class="cell">
+      <div class="notification">💰 Venda - R$197</div>
     </div>
-    <div class="faq-item">
-      <h3>❓ Funciona pra quem tá começando?</h3>
-      <p>Sim! Você aprende do absoluto zero até faturar alto no digital, sem complicação.</p>
-    </div>
-  </div>
-</div>
-
-<!-- WhatsApp -->
-<div class="whatsapp">
-  <a href="https://wa.me/5529991229786?text=Ol%C3%A1!%20Tenho%20interesse%20no%20E-book%20O%20Segredo.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank">💬</a>
-</div>
-
-<script>
-const faqItems = document.querySelectorAll('.faq-item h3');
-faqItems.forEach(item => {
-  item.addEventListener('click', () => {
-    const p = item.nextElementSibling;
-    p.style.display = p.style.display === 'block' ? 'none' : 'block';
-  });
-});
-</script>
-
+  </div>  <div class="section">
+    <h2>📘 O que você vai aprender no E-book?</h2>
+    <p>✔️ Como vender no orgânico sem aparecer.<br>
+    ✔️ Gerar vendas todos os dias sem investir.<br>
+    ✔️ Técnicas secretas que ninguém te conta.<br>
+    ✔️ Criar sua estrutura que vende no automático.</p>
+  </div>  <div class="video">
+    <video src="video.mp4" controls></video>
+  </div>  <div class="section">
+    <a href="https://pay.kiwify.com.br/1hpTVDK" class="button">ACESSAR AGORA</a>
+  </div>  <div class="faq">
+    <h3>Perguntas Frequentes</h3>
+    <p><strong>❓ Preciso aparecer?</strong><br>Não. Todas as estratégias são 100% sem aparecer.</p>
+    <p><strong>❓ É possível vender mesmo sem seguidores?</strong><br>Sim, o método é testado para iniciantes do zero.</p>
+    <p><strong>❓ Funciona só pra quem já tem experiência?</strong><br>Não. Qualquer pessoa pode aplicar e começar ainda hoje.</p>
+  </div>  <div class="whatsapp">💬 WhatsApp</div>
+  <div class="names">Carlos garantiu o acesso ✅</div>
 </body>
 </html>
