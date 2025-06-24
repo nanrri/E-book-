@@ -1,278 +1,290 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O Segredo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #000;
-      color: #fff;
-      overflow-x: hidden;
-    }
-    h1 {
-      background: #001f1a;
-      padding: 20px;
-      border-radius: 20px;
-      color: #00ff99;
-      text-align: center;
-      margin: 20px;
-      box-shadow: 0 0 20px #00ff99;
-    }
-    .sub {
-      text-align: center;
-      font-size: 1rem;
-      color: #ccc;
-      padding: 0 20px;
-    }
-    .cta {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .cta button {
-      background: #00ff99;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 0 15px #00ff99;
-      transition: all 0.3s ease;
-    }
-    .cta button:hover {
-      background: #00cc77;
-    }
-    .celular {
-      width: 180px;
-      height: 360px;
-      margin: 40px auto 0;
-      border-radius: 40px;
-      border: 6px solid #00ff99;
-      box-shadow: 0 0 30px #00ff99;
-      background: black;
-      position: relative;
-    }
-    .notificacao {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #00ff99;
-      color: black;
-      padding: 8px 16px;
-      border-radius: 30px;
-      box-shadow: 0 0 20px #00ff99;
-      font-size: 0.9rem;
-      animation: cair 4s infinite;
-      z-index: 2;
-    }
-    @keyframes cair {
-      0% { top: -50px; opacity: 0; }
-      10% { opacity: 1; }
-      50% { top: 150px; }
-      100% { top: 150px; opacity: 0; }
-    }
-    .aprendizado {
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
-    .aprendizado h2 {
-      color: #00ff99;
-      margin-bottom: 10px;
-    }
-    .aprendizado ul {
-      list-style: none;
-      padding: 0;
-    }
-    .aprendizado ul li {
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-    }
-    .video-container {
-      display: flex;
-      justify-content: center;
-      margin: 0 auto 30px;
-    }
-    video {
-      width: 320px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px #00ff99;
-    }
-    .descricao-extra {
-      text-align: center;
-      padding: 0 20px;
-      margin-bottom: 30px;
-      color: #ccc;
-      font-size: 0.95rem;
-    }
-    .faq {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-    .faq h2 {
-      color: #00ff99;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .faq-item {
-      background: #111;
-      border: 1px solid #00ff99;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 10px;
-    }
-    .faq-item h3 {
-      margin: 0;
-      cursor: pointer;
-    }
-    .faq-item p {
-      display: none;
-      margin-top: 10px;
-      color: #ccc;
-    }
-    .botao-whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      border-radius: 50%;
-      padding: 12px;
-      box-shadow: 0 0 10px #25d366;
-    }
-    .botao-whatsapp img {
-      width: 26px;
-      height: 26px;
-    }
-    .nomes {
-      position: fixed;
-      bottom: 20px;
-      left: 10px;
-      background: #00ff99;
-      padding: 10px 18px;
-      border-radius: 30px;
-      color: black;
-      font-size: 0.9rem;
-      font-weight: bold;
-      animation: piscar 2s infinite;
-    }
-    @keyframes piscar {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Segredo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+h1 {
+  background: #001f1a;
+  padding: 20px;
+  border-radius: 20px;
+  color: #00ff99;
+  text-align: center;
+  margin: 20px;
+  box-shadow: 0 0 20px #00ff99;
+}
+.sub {
+  text-align: center;
+  font-size: 1rem;
+  color: #ccc;
+  padding: 0 20px;
+}
+.cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.cta button {
+  background: #00ff99;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ff99;
+  transition: all 0.3s ease;
+}
+.cta button:hover {
+  background: #00cc77;
+}
+.celular {
+  width: 180px;
+  height: 360px;
+  margin: 40px auto 0;
+  border-radius: 40px;
+  border: 6px solid #00ff99;
+  box-shadow: 0 0 30px #00ff99;
+  background: black;
+  position: relative;
+  overflow: hidden;
+}
+.notificacao {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00ff99;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px #00ff99;
+  font-size: 0.9rem;
+  animation: cair 6s infinite;
+  z-index: 2;
+}
+@keyframes cair {
+  0% { top: -50px; opacity: 0; }
+  10% { opacity: 1; }
+  50% { top: 150px; }
+  100% { top: 150px; opacity: 0; }
+}
+.aprendizado {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+.aprendizado h2 {
+  color: #00ff99;
+  margin-bottom: 10px;
+}
+.aprendizado ul {
+  list-style: none;
+  padding: 0;
+}
+.aprendizado ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 30px;
+}
+video {
+  width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00ff99;
+}
+.descricao-extra {
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+.faq {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.faq h2 {
+  color: #00ff99;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.faq-item {
+  background: #111;
+  border: 2px solid #00ff99;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 15px #00ff99;
+  transition: 0.3s;
+}
+.faq-item:hover {
+  transform: scale(1.02);
+}
+.faq-item h3 {
+  margin: 0;
+  cursor: pointer;
+  color: #00ff99;
+}
+.faq-item p {
+  display: none;
+  margin-top: 10px;
+  color: #ccc;
+}
+.botao-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 0 10px #25d366;
+}
+.botao-whatsapp img {
+  width: 26px;
+  height: 26px;
+}
+.nomes {
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
+  background: #00ff99;
+  padding: 10px 18px;
+  border-radius: 30px;
+  color: black;
+  font-size: 0.9rem;
+  font-weight: bold;
+  animation: piscar 2s infinite;
+}
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+</style>
 </head>
 <body>
 
-  <h1>🚀 O Segredo Para Ganhar no Orgânico</h1>
-  <p class="sub">Descubra como ganhar dinheiro no digital sem aparecer e sem investir, usando os mesmos segredos dos grandes players.</p>
+<h1>🚀 O Segredo Para Ganhar no Orgânico</h1>
+<p class="sub">Descubra como ganhar dinheiro no digital sem aparecer e sem investir, usando os mesmos segredos dos grandes players.</p>
 
-  <div class="cta">
-    <a href="https://pay.kiwify.com.br/1hpTVDK"><button>GARANTIR AGORA</button></a>
+<div class="cta">
+  <a href="https://pay.kiwify.com.br/1hpTVDK"><button>GARANTIR AGORA</button></a>
+</div>
+
+<div class="celular">
+  <div class="notificacao" id="notificacao">
+    💸 Venda Aprovada — R$197
+  </div>
+</div>
+
+<section class="aprendizado">
+  <h2>📘 O que você vai aprender no E-book?</h2>
+  <ul>
+    <li>✔️ Como gerar renda no orgânico, mesmo sendo iniciante.</li>
+    <li>✔️ Estratégias ocultas que os grandes usam (e não te contam).</li>
+    <li>✔️ Vender todos os dias no automático, sem investir em tráfego pago.</li>
+    <li>✔️ Montar sua estrutura que gera faturamento constante.</li>
+  </ul>
+</section>
+
+<div class="video-container">
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo.
+  </video>
+</div>
+
+<div class="descricao-extra">
+  <strong>O SEGREDO QUE ELES ESCONDEM:</strong> Você está prestes a desbloquear um método que permite gerar vendas diárias, sem se expor, sem investir e sem precisar depender de anúncios. É o mesmo caminho silencioso que os bastidores do marketing digital utilizam pra faturar pesado no orgânico. <br><br>🔒 Esse conhecimento foi escondido por anos... até agora.
+</div>
+
+<div class="cta">
+  <a href="https://pay.kiwify.com.br/1hpTVDK"><button>GARANTIR AGORA</button></a>
+</div>
+
+<section class="faq">
+  <h2>❓ Perguntas Frequentes</h2>
+
+  <div class="faq-item">
+    <h3>Preciso aparecer?</h3>
+    <p>Não! Você não precisa gravar vídeos, nem mostrar seu rosto. 100% sem aparecer!</p>
   </div>
 
-  <div class="celular">
-    <div class="notificacao" id="notificacao">
-      💸 Venda Aprovada — R$197
-    </div>
+  <div class="faq-item">
+    <h3>Preciso investir em tráfego pago?</h3>
+    <p>Não, é tudo no orgânico. Você aprende como faturar todos os dias sem gastar em anúncios!</p>
   </div>
 
-  <section class="aprendizado">
-    <h2>📘 O que você vai aprender no E-book?</h2>
-    <ul>
-      <li>✔️ Como gerar renda no orgânico, mesmo sendo iniciante.</li>
-      <li>✔️ Estratégias ocultas que os grandes usam (e não te contam).</li>
-      <li>✔️ Vender todos os dias no automático, sem investir em tráfego pago.</li>
-      <li>✔️ Montar sua estrutura que gera faturamento constante.</li>
-    </ul>
-  </section>
-
-  <div class="video-container">
-    <video controls>
-      <source src="video.mp4" type="video/mp4">
-      Seu navegador não suporta vídeo.
-    </video>
+  <div class="faq-item">
+    <h3>Funciona pra quem está começando?</h3>
+    <p>Sim! É feito pra quem tá começando do absoluto zero até quem já tem experiência no digital.</p>
   </div>
 
-  <div class="descricao-extra">
-    Imagine ter uma estrutura que gera vendas todos os dias, sem precisar gravar vídeos, sem precisar aparecer e sem investir em anúncios. É exatamente isso que você vai aprender. O jogo virou, e agora você pode faturar pesado no orgânico!
+  <div class="faq-item">
+    <h3>Quanto posso faturar?</h3>
+    <p>Os alunos que aplicam o método corretamente chegam a faturar de R$3 mil a R$10 mil mensais, e alguns passam disso.</p>
   </div>
 
-  <div class="cta">
-    <a href="https://pay.kiwify.com.br/1hpTVDK"><button>GARANTIR AGORA</button></a>
+  <div class="faq-item">
+    <h3>É de verdade? Funciona mesmo?</h3>
+    <p>Sim, são métodos testados, validados e usados pelos grandes do mercado. Você só não sabia... até agora.</p>
   </div>
+</section>
 
-  <section class="faq">
-    <h2>❓ Perguntas Frequentes</h2>
+<div class="botao-whatsapp">
+  <a href="https://wa.me/5542991229786?text=Quero%20saber%20mais%20sobre%20O%20Segredo!">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+</div>
 
-    <div class="faq-item">
-      <h3>Preciso aparecer?</h3>
-      <p>Não! O método é 100% sem aparecer, tudo no orgânico e de forma profissional.</p>
-    </div>
+<div class="nomes" id="nome-aleatorio">
+  Carlos garantiu o acesso ✅
+</div>
 
-    <div class="faq-item">
-      <h3>Preciso investir em tráfego pago?</h3>
-      <p>Zero reais investidos! Todo o método é no orgânico, usando técnicas que os grandes usam escondido.</p>
-    </div>
+<script>
+const nomes = [
+  'Carlos garantiu o acesso ✅',
+  'Juliana garantiu o acesso ✅',
+  'Pedro garantiu o acesso ✅',
+  'Bianca garantiu o acesso ✅',
+  'Rafael garantiu o acesso ✅',
+  'Amanda garantiu o acesso ✅',
+  'Lucas garantiu o acesso ✅',
+  'Fernanda garantiu o acesso ✅',
+  'Eduardo garantiu o acesso ✅',
+  'Letícia garantiu o acesso ✅'
+];
 
-    <div class="faq-item">
-      <h3>Funciona pra quem está começando?</h3>
-      <p>Sim! Você vai aprender do absoluto zero, mesmo sem experiência anterior.</p>
-    </div>
+const valores = ['9,90', '35,45', '19,90', '47,00', '59,90', '24,90', '39,90'];
 
-    <div class="faq-item">
-      <h3>Quanto posso faturar?</h3>
-      <p>Os alunos aplicando corretamente chegam a faturar de 3 a 10 mil reais por mês no orgânico. Alguns passam disso!</p>
-    </div>
-  </section>
+setInterval(() => {
+  const nome = nomes[Math.floor(Math.random() * nomes.length)];
+  document.getElementById('nome-aleatorio').textContent = nome;
 
-  <div class="botao-whatsapp">
-    <a href="https://wa.me/5542991229786?text=Quero%20saber%20mais%20sobre%20O%20Segredo!">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384088.png" alt="WhatsApp">
-    </a>
-  </div>
+  const valor = valores[Math.floor(Math.random() * valores.length)];
+  document.getElementById('notificacao').textContent = `💸 Venda Aprovada — R$${valor}`;
+}, 4000);
 
-  <div class="nomes" id="nome-aleatorio">
-    Carlos garantiu o acesso ✅
-  </div>
-
-  <script>
-    const nomes = [
-      'Carlos garantiu o acesso ✅',
-      'Juliana garantiu o acesso ✅',
-      'Pedro garantiu o acesso ✅',
-      'Bianca garantiu o acesso ✅',
-      'Rafael garantiu o acesso ✅',
-      'Amanda garantiu o acesso ✅',
-      'Lucas garantiu o acesso ✅',
-      'Fernanda garantiu o acesso ✅',
-      'Eduardo garantiu o acesso ✅',
-      'Letícia garantiu o acesso ✅'
-    ];
-
-    const valores = ['9,90', '35,45', '19,90', '47,00', '59,90', '24,90', '39,90'];
-
-    setInterval(() => {
-      const nome = nomes[Math.floor(Math.random() * nomes.length)];
-      document.getElementById('nome-aleatorio').textContent = nome;
-
-      const valor = valores[Math.floor(Math.random() * valores.length)];
-      document.getElementById('notificacao').textContent = `💸 Venda Aprovada — R$${valor}`;
-    }, 4000);
-
-    const faqItems = document.querySelectorAll('.faq-item h3');
-    faqItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const p = item.nextElementSibling;
-        p.style.display = p.style.display === 'block' ? 'none' : 'block';
-      });
-    });
-  </script>
+const faqItems = document.querySelectorAll('.faq-item h3');
+faqItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const p = item.nextElementSibling;
+    p.style.display = p.style.display === 'block' ? 'none' : 'block';
+  });
+});
+</script>
 
 </body>
 </html>
