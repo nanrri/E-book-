@@ -1,76 +1,201 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O Segredo - E-book Revelador</title>
 <style>
+/* Fundo Galáxia Animada */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: radial-gradient(ellipse at bottom, #0a0a0a, #000);
+  overflow-x: hidden;
+  background: #000;
   color: #fff;
+  font-family: 'Arial', sans-serif;
+  background: radial-gradient(ellipse at center, #000 0%, #020202 100%);
 }
+
+body::before {
+  content: '';
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: repeating-radial-gradient(#00ffaa 2px, transparent 5px);
+  animation: moveStars 50s linear infinite;
+  z-index: -1;
+  opacity: 0.08;
+}
+
+@keyframes moveStars {
+  0% {transform: translate(0, 0);}
+  100% {transform: translate(-500px, 500px);}
+}
+
+/* Hero */
 .hero {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(to top, #0a0a0a, #00ffaa11);
+  background: linear-gradient(to bottom, #000, #00ffaa12);
 }
+
 .hero h1 {
   font-size: 3rem;
   color: #00ffaa;
 }
+
 .hero p {
   font-size: 1.2rem;
-  max-width: 650px;
+  color: #ccc;
+  max-width: 700px;
   margin: 20px auto;
 }
+
 .cta-button {
   background: #00ffaa;
   color: #000;
   padding: 15px 30px;
-  font-weight: bold;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: transform 0.3s;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  box-shadow: 0 0 20px #00ffaa;
 }
+
 .cta-button:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 35px #00ffaa;
 }
-.discount-bar {
-  margin-top: 10px;
+
+/* iPhone Girando */
+.iphone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  position: relative;
+}
+
+.iphone img {
+  width: 180px;
+  animation: spin 10s infinite linear;
+}
+
+@keyframes spin {
+  from {transform: rotateY(0);}
+  to {transform: rotateY(360deg);}
+}
+
+/* Notificação flutuante */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background: #00ffaa;
   color: #000;
-  padding: 5px 15px;
-  display: inline-block;
-  border-radius: 8px;
-  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #00ffaa;
+  animation: float 4s infinite;
+  z-index: 999;
 }
-.faq {
+
+@keyframes float {
+  0% {transform: translateX(-50%) translateY(0);}
+  50% {transform: translateX(-50%) translateY(20px);}
+  100% {transform: translateX(-50%) translateY(0);}
+}
+
+/* Notificações Caindo */
+.falling-notifications {
+  position: fixed;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 998;
+}
+
+.falling-notifications div {
+  position: absolute;
+  top: 0;
+  background: #00ffaa;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #00ffaa;
+  animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(120vh);}
+}
+
+/* Ebook Showcase */
+.ebook-showcase {
   background: #121212;
-  padding: 50px 20px;
+  padding: 40px 20px;
   text-align: center;
 }
-.faq h2 {
+
+.ebook-showcase h2 {
+  color: #00ffaa;
+  margin-bottom: 20px;
+}
+
+.ebook-showcase p {
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* FAQ */
+.faq-section {
+  background: #121212;
+  padding: 50px 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
   color: #00ffaa;
   margin-bottom: 30px;
 }
+
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .faq-item {
   background: #111;
-  border: 2px solid #00ffaa;
-  border-radius: 12px;
-  margin: 10px auto;
-  padding: 20px;
-  max-width: 600px;
+  border: 1px solid #00ffaa;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
 }
+
 .faq-item h3 {
   margin: 0;
+  cursor: pointer;
 }
+
+.faq-item p {
+  display: none;
+  margin-top: 10px;
+}
+
+/* WhatsApp */
 .whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  z-index: 999;
 }
+
 .whatsapp a {
   background: #25D366;
   padding: 15px;
@@ -80,78 +205,79 @@ body {
   font-size: 24px;
   box-shadow: 0 0 15px #25D366;
 }
-.notification {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #00ffaa;
-  color: #000;
-  padding: 10px 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #00ffaa;
-  animation: fade 5s infinite;
-}
-@keyframes fade {
-  0% {opacity: 1;}
-  80% {opacity: 1;}
-  100% {opacity: 0;}
-}
-.iphone {
-  width: 200px;
-  height: 400px;
-  background: #000;
-  border: 8px solid #00ffaa;
-  border-radius: 30px;
-  margin: 20px auto;
-  animation: rotate 8s linear infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@keyframes rotate {
-  0% {transform: rotateY(0deg);}
-  100% {transform: rotateY(360deg);}
-}
-.iphone p {
-  color: #fff;
-  text-align: center;
-}
 </style>
 </head>
 <body>
-<div class="hero">
-  <h1>Descubra o Segredo Que Ninguém Conta</h1>
-  <p>O método oculto para ganhar no digital, sem aparecer, sem investir, e faturar todos os dias.</p>
-  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">QUERO AGORA</a>
-  <div class="discount-bar">DESCONTO RELÂMPAGO – De R$35,45 por R$9,90</div>
-</div>
-<div class="iphone">
-  <p>Notificação:<br>Venda Aprovada</p>
-</div>
-<div class="faq">
-  <h2>Perguntas Frequentes</h2>
-  <div class="faq-item">
-    <h3>💰 Como funciona o e-book?</h3>
-    <p>Você terá acesso ao segredo que grandes players usam para ganhar dinheiro no digital sem aparecer.</p>
-  </div>
-  <div class="faq-item">
-    <h3>📱 Preciso investir?</h3>
-    <p>Não! Tudo é feito de forma 100% orgânica e sem investimento inicial.</p>
-  </div>
-  <div class="faq-item">
-    <h3>🚀 Em quanto tempo vejo resultado?</h3>
-    <p>Depende do seu esforço. Tem alunos que faturam nos primeiros dias aplicando corretamente.</p>
-  </div>
-  <div class="faq-item">
-    <h3>❓ E se eu não gostar?</h3>
-    <p>Você tem garantia de 7 dias. Se não servir pra você, devolvemos seu dinheiro.</p>
-  </div>
-</div>
-<div class="whatsapp">
-  <a href="https://wa.me/5529991229786" target="_blank">📱</a>
-</div>
+
+<!-- Notificação Fixa -->
 <div class="notification">
-  <p>🚀 Venda aprovada - João comprou agora!</p>
+  💸 Venda Aprovada - R$197,00
 </div>
+
+<!-- Notificações Caindo -->
+<div class="falling-notifications">
+  <div style="left:10%;">💰 Venda - R$197</div>
+  <div style="left:30%; animation-delay: 2s;">💰 Venda - R$197</div>
+  <div style="left:50%; animation-delay: 4s;">💰 Venda - R$197</div>
+  <div style="left:70%; animation-delay: 3s;">💰 Venda - R$197</div>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>🚀 O Segredo Para Ganhar no Orgânico</h1>
+  <p>Descubra os segredos ocultos que os grandes não querem te contar. Método validado, 100% sem investir em tráfego pago!</p>
+  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">QUERO MEU ACESSO</a>
+</div>
+
+<!-- iPhone -->
+<div class="iphone">
+  <img src="https://i.postimg.cc/zf4g2Xk5/iphone.png" alt="iPhone">
+</div>
+
+<!-- Ebook Showcase -->
+<div class="ebook-showcase">
+  <h2>O que você vai aprender no E-book?</h2>
+  <p>✔️ Como vender no orgânico sem aparecer.<br>
+     ✔️ Gerar vendas todos os dias sem investir.<br>
+     ✔️ Técnicas secretas que ninguém te conta.<br>
+     ✔️ Criar sua estrutura que vende no automático.<br>
+     ✔️ E muito mais…</p>
+  <a href="https://pay.kiwify.com.br/1hpTVDK" class="cta-button">ACESSAR AGORA</a>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>Perguntas Frequentes</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <h3>❓ Preciso aparecer?</h3>
+      <p>Não! O método é 100% sem aparecer, usando estratégias ocultas e profissionais.</p>
+    </div>
+    <div class="faq-item">
+      <h3>❓ Preciso investir em anúncios?</h3>
+      <p>Zero investimento! É tudo no orgânico, como os milionários do digital fazem escondido.</p>
+    </div>
+    <div class="faq-item">
+      <h3>❓ Funciona pra quem tá começando?</h3>
+      <p>Sim! Você aprende do absoluto zero até faturar alto no digital, sem complicação.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WhatsApp -->
+<div class="whatsapp">
+  <a href="https://wa.me/5529991229786?text=Ol%C3%A1!%20Tenho%20interesse%20no%20E-book%20O%20Segredo.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank">💬</a>
+</div>
+
+<script>
+const faqItems = document.querySelectorAll('.faq-item h3');
+faqItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const p = item.nextElementSibling;
+    p.style.display = p.style.display === 'block' ? 'none' : 'block';
+  });
+});
+</script>
+
 </body>
 </html>
