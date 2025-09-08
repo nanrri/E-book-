@@ -59,7 +59,7 @@
     .video-section {
       margin: 60px auto;
       text-align: center;
-      max-width: 900px;
+      max-width: 600px;
     }
     .video-section video {
       width: 100%;
@@ -80,10 +80,15 @@
     }
     .faq-item {
       background: rgba(255, 255, 255, 0.05);
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       border-radius: 10px;
       overflow: hidden;
-      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      transition: all 0.4s ease;
+    }
+    .faq-item:hover {
+      border-color: #00ff99;
+      box-shadow: 0 0 15px #00ff99;
     }
     .faq-item summary {
       padding: 15px;
@@ -96,6 +101,24 @@
       margin: 0;
       font-size: 1rem;
       line-height: 1.5;
+    }
+    .purchase-feed {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: #fff;
+      border: 1px solid #00ff99;
+      animation: fadeInOut 6s infinite;
+    }
+    @keyframes fadeInOut {
+      0% {opacity: 0; transform: translateY(20px);}
+      10% {opacity: 1; transform: translateY(0);}
+      90% {opacity: 1; transform: translateY(0);}
+      100% {opacity: 0; transform: translateY(20px);}
     }
     footer {
       text-align: center;
@@ -149,8 +172,20 @@
   <p>Enquanto a maioria ensina fórmulas rasas, aqui você aprende a lógica real que os grandes aplicam, mas nunca revelam publicamente.</p>
 </details>
 
-  </div>  <footer>
+  </div>  <div class="purchase-feed" id="purchaseFeed">João de SP acabou de garantir o acesso!</div>  <footer>
     © 2025 O Código Oculto — Todos os direitos reservados.
-  </footer>
-</body>
+  </footer>  <script>
+    const nomes = [
+      "Maria de RJ acabou de garantir o acesso!",
+      "Carlos de MG acabou de garantir o acesso!",
+      "Ana de BA acabou de garantir o acesso!",
+      "Lucas de DF acabou de garantir o acesso!",
+      "Fernanda de PR acabou de garantir o acesso!"
+    ];
+    let index = 0;
+    setInterval(() => {
+      document.getElementById('purchaseFeed').innerText = nomes[index];
+      index = (index + 1) % nomes.length;
+    }, 6000);
+  </script></body>
 </html>
