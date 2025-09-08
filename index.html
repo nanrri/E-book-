@@ -16,26 +16,10 @@
       --card-shadow:0 10px 30px rgba(0,0,0,.6);
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      border:6px solid rgba(57,255,20,0.15);
-      box-shadow:inset 0 0 25px rgba(57,255,20,0.08);
-    }
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 
     /* Top bar */
-    header.topbar{
-      position:sticky;
-      top:0;
-      background:rgba(0,0,0,.6);
-      backdrop-filter:blur(6px);
-      border-bottom:1px solid #0e0e0e;
-      padding:12px 18px;
-      z-index:40
-    }
+    header.topbar{position:sticky;top:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);border-bottom:1px solid #0e0e0e;padding:12px 18px;z-index:40}
     .topbar .wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
     .brand{font-weight:700}
     .cta-badge{background:transparent;border:1px solid rgba(57,255,20,.08);padding:8px 12px;border-radius:999px;color:var(--text);text-decoration:none}
@@ -49,14 +33,7 @@
     .primary-cta{display:inline-block;margin-top:6px;background:var(--green);color:#031b08;padding:14px 26px;border-radius:12px;font-weight:800;text-decoration:none;box-shadow:0 8px 30px rgba(57,255,20,.12)}
 
     /* Video smaller and centered */
-    .video-wrap{
-      max-width:580px;
-      margin:26px auto;
-      border-radius:14px;
-      overflow:hidden;
-      border:1px solid rgba(57,255,20,.06);
-      box-shadow:var(--card-shadow)
-    }
+    .video-wrap{max-width:640px;margin:22px auto;border-radius:14px;overflow:hidden;border:1px solid rgba(57,255,20,.06);box-shadow:var(--card-shadow)}
     .video-wrap video{width:100%;height:auto;display:block}
 
     /* Sections */
@@ -72,41 +49,23 @@
     ul.check li{display:flex;gap:10px;align-items:flex-start}
     .dot{width:18px;height:18px;border-radius:6px;background:var(--green);box-shadow:0 0 8px rgba(57,255,20,.12)}
 
-    /* FAQ clean */
-    .faq{max-width:920px;margin:28px auto;text-align:left}
+    /* FAQ clean: border always green (subtle) */
+    .faq{max-width:920px;margin:22px auto;text-align:left}
     .faq h2{text-align:center}
-    .faq-item{
-      padding:14px 18px;
-      border-radius:10px;
-      border:1px solid rgba(57,255,20,0.25);
-      background:rgba(255,255,255,0.01);
-      margin-bottom:14px;
-      transition:all .25s ease;
-    }
-    .faq-item:hover{background:rgba(57,255,20,0.05)}
+    .faq-item{padding:14px;border-radius:10px;border:1px solid rgba(57,255,20,0.28);background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));margin-bottom:12px}
     .faq-item summary{font-weight:700;cursor:pointer;outline:none}
-    .faq-item p{margin-top:8px;color:#d8e4e6;line-height:1.5}
+    .faq-item p{margin-top:8px;color:#d8e4e6}
 
     /* Purchase feed */
-    .purchase-feed{
-      position:fixed;
-      left:18px;
-      bottom:18px;
-      background:rgba(7,7,7,.6);
-      padding:10px 14px;
-      border-radius:10px;
-      color:var(--green);
-      border:1px solid rgba(57,255,20,0.12);
-      box-shadow:0 6px 20px rgba(0,0,0,.6);
-      font-weight:600
-    }
+    .purchase-feed{position:fixed;left:18px;bottom:18px;background:rgba(7,7,7,.6);padding:10px 14px;border-radius:10px;color:var(--green);border:1px solid rgba(57,255,20,0.12);box-shadow:0 6px 20px rgba(0,0,0,.6);font-weight:600}
 
     footer{max-width:1100px;margin:30px auto 60px;padding:10px 16px;color:var(--muted);text-align:center}
+
   </style>
 </head>
 <body>
 
-  <header class="topbar">
+  <header class="topbar" aria-hidden="false">
     <div class="wrap">
       <div class="brand">O Código Oculto — Orgânico</div>
       <a class="cta-badge" href="https://pay.kiwify.com.br/1hpTVDK" target="_blank" rel="noopener">GARANTIR AGORA</a>
@@ -120,7 +79,7 @@
       <a class="primary-cta" href="https://pay.kiwify.com.br/1hpTVDK" target="_blank" rel="noopener">GARANTIR AGORA</a>
     </article>
 
-    <!-- Video -->
+    <!-- Video (smaller) -->
     <div class="video-wrap" aria-label="Apresentação">
       <video controls playsinline preload="metadata" poster="thumb.jpg">
         <source src="video.mp4" type="video/mp4">
@@ -128,15 +87,15 @@
       </video>
     </div>
 
-    <!-- Conteúdo -->
-    <section class="card grid two">
+    <!-- What you'll learn -->
+    <section class="card grid two" aria-labelledby="aprender">
       <div>
-        <h2>O que você vai aprender</h2>
+        <h2 id="aprender">O que você vai aprender</h2>
         <ul class="check">
-          <li><span class="dot"></span><span>Como gerar renda no orgânico, mesmo sendo iniciante.</span></li>
-          <li><span class="dot"></span><span>Estratégias ocultas que os grandes usam (e não te contam).</span></li>
-          <li><span class="dot"></span><span>Vender todos os dias no automático, sem investir em tráfego pago.</span></li>
-          <li><span class="dot"></span><span>Montar sua estrutura que gera faturamento constante.</span></li>
+          <li><span class="dot" aria-hidden></span><span>Como gerar renda no orgânico, mesmo sendo iniciante.</span></li>
+          <li><span class="dot" aria-hidden></span><span>Estratégias ocultas que os grandes usam (e não te contam).</span></li>
+          <li><span class="dot" aria-hidden></span><span>Vender todos os dias no automático, sem investir em tráfego pago.</span></li>
+          <li><span class="dot" aria-hidden></span><span>Montar sua estrutura que gera faturamento constante.</span></li>
         </ul>
       </div>
 
@@ -147,13 +106,13 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq">
-      <h2>Perguntas Frequentes</h2>
+    <!-- FAQ with answers (clean border) -->
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Perguntas Frequentes</h2>
 
       <details class="faq-item">
         <summary>O que é marketing orgânico?</summary>
-        <p>É atrair e converter clientes usando conteúdo, posicionamento e relacionamento — sem depender de anúncios pagos. Envolve criação de autoridade, funis simples e mensagens que convertem.</p>
+        <p>Marketing orgânico é atrair e converter clientes usando conteúdo, posicionamento e relacionamento — sem depender de anúncios pagos. Envolve criação de autoridade, funis simples e mensagens que convertem.</p>
       </details>
 
       <details class="faq-item">
@@ -163,32 +122,35 @@
 
       <details class="faq-item">
         <summary>Quanto tempo até ver resultados?</summary>
-        <p>Quem aplica com consistência geralmente vê engajamento em 2–4 semanas e vendas em 3–8 semanas, dependendo do esforço.</p>
+        <p>Resultados podem variar, mas quem aplica com consistência geralmente vê engajamento nas primeiras 2-4 semanas e vendas em 3-8 semanas, dependendo do esforço.</p>
       </details>
 
       <details class="faq-item">
         <summary>Preciso investir dinheiro inicialmente?</summary>
-        <p>Não. O método usa estratégias orgânicas que permitem começar com baixo custo e escalar com o tempo.</p>
+        <p>Não é necessário investir em tráfego pago. O método usa estratégias orgânicas que permitem começar com baixo custo e escalar com o tempo.</p>
       </details>
 
       <details class="faq-item">
         <summary>Quais plataformas devo usar?</summary>
-        <p>Instagram, TikTok e WhatsApp são ótimas para o método — mas o foco é na mensagem e na jornada do cliente, que funcionam em qualquer rede.</p>
+        <p>Plataformas como Instagram, TikTok e WhatsApp são ótimas para o método — mas o foco é na mensagem e na jornada do cliente, que funcionam em qualquer rede.</p>
       </details>
 
       <details class="faq-item">
         <summary>Funciona para iniciantes?</summary>
         <p>Sim. O material cobre desde o básico até táticas avançadas, tudo explicado passo a passo para quem começa do zero.</p>
       </details>
+
     </section>
+
   </main>
 
-  <!-- Purchase feed -->
+  <!-- Purchase feed (green text) -->
   <div class="purchase-feed" id="purchaseFeed" aria-live="polite">João de SP garantiu o acesso!</div>
 
   <footer>© 2025 O Código Oculto — Todos os direitos reservados.</footer>
 
   <script>
+    // nomes rotativos para o feed de compras
     const nomes = [
       "Maria de RJ garantiu o acesso!",
       "Carlos de MG garantiu o acesso!",
