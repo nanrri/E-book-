@@ -6,182 +6,142 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #000000, #0f0f0f);
-      color: #fff;
-      overflow-x: hidden;
-    }
-    header {
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
       text-align: center;
-      padding: 20px;
-      border-bottom: 2px solid #00ff99;
-      font-size: 1.2rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-    h1 {
-      text-align: center;
-      font-size: 3rem;
-      color: #00ff99;
-      text-shadow: 0 0 15px #00ff99;
-      margin: 40px 20px 20px;
-    }
-    .hero {
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-    .cta-btn {
-      background: #00ff99;
-      color: #000;
-      padding: 15px 40px;
-      font-size: 1.3rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      margin: 20px 0;
-      text-transform: uppercase;
-    }
-    .cta-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #00ff99;
-    }
-    .video-section {
-      margin: 60px auto;
-      text-align: center;
-      max-width: 600px;
-    }
-    .video-section video {
-      width: 100%;
-      border: 3px solid #00ff99;
-      border-radius: 20px;
-      box-shadow: 0 0 25px #00ff99;
-    }
-    .faq {
-      max-width: 900px;
-      margin: 60px auto;
-    }
-    .faq h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #00ff99;
-      text-shadow: 0 0 10px #00ff99;
-    }
-    .faq-item {
-      background: rgba(255, 255, 255, 0.05);
-      margin-bottom: 15px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 2px solid #00ff99;
-      transition: all 0.4s ease;
-    }
-    .faq-item summary {
-      padding: 15px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .faq-item p {
-      padding: 15px;
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    .purchase-feed {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      color: #00ff99;
-      border: 1px solid #00ff99;
-      animation: fadeInOut 6s infinite;
-    }
-    @keyframes fadeInOut {
-      0% {opacity: 0; transform: translateY(20px);}
-      10% {opacity: 1; transform: translateY(0);}
-      90% {opacity: 1; transform: translateY(0);}
-      100% {opacity: 0; transform: translateY(20px);}
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.8);
-      border-top: 2px solid #00ff99;
-      margin-top: 40px;
-    }
+    }header {
+  padding: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #39ff14;
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #aaa;
+}
+
+.cta {
+  margin: 1.5rem 0;
+}
+
+.cta button {
+  padding: 1rem 2rem;
+  background: #39ff14;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.5);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.cta button:hover {
+  transform: scale(1.05);
+  background: #32e012;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.video-container video {
+  width: 50%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+}
+
+.faq {
+  margin: 3rem auto;
+  max-width: 800px;
+  text-align: left;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #39ff14;
+  text-shadow: 0 0 6px rgba(57, 255, 20, 0.6);
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(57, 255, 20, 0.6);
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.faq-item:hover {
+  background: rgba(57, 255, 20, 0.08);
+  transform: translateX(4px);
+}
+
+.purchase-feed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #39ff14;
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.5);
+  animation: fadeInOut 6s infinite;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
   </style>
 </head>
-<body>
-  <header>
-    O Código Oculto — O guia definitivo para você faturar pesado no orgânico
-  </header>  <h1>O Código Oculto</h1>
-  <div class="hero">
-    <p>Você está prestes a descobrir o que os grandes players do digital escondem. Esse método é o <strong>atalho secreto</strong> para transformar seguidores em clientes fiéis, sem gastar um centavo em anúncios. É o mesmo princípio que os maiores nomes do mercado aplicam todos os dias — e agora ele está nas suas mãos.</p>
-    <button class="cta-btn">QUERO AGORA</button>
-  </div>  <div class="video-section">
-    <video src="video.mp4" autoplay muted loop controls></video>
-  </div>  <div class="hero">
-    <p>Marketing orgânico não é apenas postar conteúdo. É <strong>estratégia</strong>, é <strong>jogo de influência</strong>, é saber como conduzir o público até o ponto exato de decisão. O Código Oculto foi desenhado para quem quer resultados reais: seguidores que compram, audiência que confia e lucros que se multiplicam.</p>
-    <button class="cta-btn">GARANTIR MEU ACESSO</button>
-  </div>  <div class="faq">
-    <h2>Perguntas Frequentes</h2><details class="faq-item">
-  <summary>O que é marketing orgânico?</summary>
-  <p>É a forma de atrair clientes sem investir em anúncios, apenas com estratégias inteligentes de conteúdo e posicionamento.</p>
-</details>
-
-<details class="faq-item">
-  <summary>Funciona mesmo sem ter muitos seguidores?</summary>
-  <p>Sim! O Código Oculto mostra como converter até mesmo pequenas audiências em clientes de alto valor.</p>
-</details>
-
-<details class="faq-item">
-  <summary>Em quanto tempo posso ter resultados?</summary>
-  <p>Se aplicar as estratégias corretamente, você pode começar a ver engajamento e vendas em poucas semanas.</p>
-</details>
-
-<details class="faq-item">
-  <summary>Preciso aparecer em vídeos?</summary>
-  <p>Não! O método mostra como crescer e vender no digital mesmo sem aparecer.</p>
-</details>
-
-<details class="faq-item">
-  <summary>Esse método serve para iniciantes?</summary>
-  <p>Totalmente. Ele foi desenhado tanto para iniciantes quanto para quem já atua no digital e quer multiplicar resultados.</p>
-</details>
-
-<details class="faq-item">
-  <summary>Qual a diferença desse método para outros?</summary>
-  <p>Enquanto a maioria ensina fórmulas rasas, aqui você aprende a lógica real que os grandes aplicam, mas nunca revelam publicamente.</p>
-</details>
-
-  </div>  <div class="purchase-feed" id="purchaseFeed">João de SP acabou de garantir o acesso!</div>  <footer>
-    © 2025 O Código Oculto — Todos os direitos reservados.
-  </footer>  <script>
-    const nomes = [
-      "Maria de RJ acabou de garantir o acesso!",
-      "Carlos de MG acabou de garantir o acesso!",
-      "Ana de BA acabou de garantir o acesso!",
-      "Lucas de DF acabou de garantir o acesso!",
-      "Fernanda de PR acabou de garantir o acesso!"
+<body>  <header>
+    <h1>O Código Oculto</h1>
+    <p>Descubra a estratégia que está transformando pessoas comuns em verdadeiros gigantes no marketing orgânico.</p>
+  </header>  <div class="cta">
+    <button>QUERO AGORA</button>
+  </div>  <div class="video-container">
+    <video controls>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+  </div>  <section class="faq">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item">Como funciona o marketing orgânico na prática?</div>
+    <div class="faq-item">Preciso aparecer para ganhar dinheiro?</div>
+    <div class="faq-item">Quanto tempo demora para ter resultados reais?</div>
+    <div class="faq-item">Preciso investir dinheiro para começar?</div>
+    <div class="faq-item">Quais plataformas eu devo usar para vender?</div>
+    <div class="faq-item">Esse método funciona mesmo sem experiência?</div>
+  </section>  <div class="purchase-feed" id="purchaseFeed">Maria de Souza garantiu o acesso!</div>  <script>
+    const names = [
+      "João Oliveira garantiu o acesso!",
+      "Carla Mendes entrou agora!",
+      "Rafael Lima acabou de comprar!",
+      "Ana Paula garantiu a vaga!",
+      "Lucas Ferreira entrou no jogo!",
+      "Mariana Costa fez parte da comunidade!"
     ];
+
     let index = 0;
     setInterval(() => {
-      document.getElementById('purchaseFeed').innerText = nomes[index];
-      index = (index + 1) % nomes.length;
+      document.getElementById("purchaseFeed").textContent = names[index];
+      index = (index + 1) % names.length;
     }, 6000);
   </script></body>
 </html>
